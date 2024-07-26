@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { endPoint } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
+import FavButton from "./FavButton";
 
 function List({ typeOfList }) {
+  // list to store data from API
   const [movieList, setMovieList] = useState([]);
+
+  // the number of page
   const [page, setPage] = useState(1);
 
   // base url of images & sizes
@@ -69,7 +73,7 @@ function List({ typeOfList }) {
     );
   }
 
-  // buttons
+  // button for change the page
   function handleGetPage(e) {
     const newPage = Number(e.target.value);
     setPage(newPage);
@@ -79,12 +83,12 @@ function List({ typeOfList }) {
     <section className="section-list-pop">
       {/* buttons for page */}
       <span>
-        {numbersOfPageLink.map((page) => {
+        {numbersOfPageLink.map((page, index) => {
           if (typeof page === "string") {
-            return <p>{page}</p>;
+            return <p key={index}>{page}</p>;
           } else {
             return (
-              <button onClick={handleGetPage} value={page}>
+              <button key={index} onClick={handleGetPage} value={page}>
                 {page}
               </button>
             );
@@ -104,6 +108,7 @@ function List({ typeOfList }) {
                   alt={movie.title}
                 />
               </Link>
+              <FavButton movieId={movie.id} />
             </div>
           );
         })}

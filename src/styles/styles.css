@@ -371,4 +371,8 @@ body {
   background-color: lightgray;
 }
 
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
