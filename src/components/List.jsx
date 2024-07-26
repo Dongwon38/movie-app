@@ -81,7 +81,7 @@ function List({ typeOfList }) {
 
   return (
     <section className="section-list-pop">
-      {/* buttons for page */}
+      {/* buttons for navigate page */}
       <span>
         {numbersOfPageLink.map((page, index) => {
           if (typeof page === "string") {
