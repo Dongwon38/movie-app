@@ -1,0 +1,115 @@
+import React, { useEffect, useState } from "react";
+import { endPoint } from "../globals/globalVariables";
+import { Link } from "react-router-dom";
+
+function List({ typeOfList }) {
+  const [movieList, setMovieList] = useState([]);
+  const [page, setPage] = useState(1);
+
+  // base url of images & sizes
+  const poster_base_url = "https://image.tmdb.org/t/p/";
+  const poster_size = [
+    "w92",
+    "w154",
+    "w185",
+    "w342",
+    "w500",
+    "w780",
+    "original",
+  ];
+
+  // get movie Data From API
+  useEffect(() => {
+    const getDataFromApi = async () => {
+      const response = await fetch(
+        `${endPoint}${typeOfList}?language=en-US&page=${page}`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MjRlMWI5MDlhMGQxMjRjNmRkODg0OTRhMWQ5OWQzYyIsIm5iZiI6MTcyMTk0NzQ1MS4yMTEzNjIsInN1YiI6IjY2NTlmOTY3ZGM2NTk2Yzk4ODYwYTM5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Gv_ObU7xwOUbeZHWujVxXLN-es1pyQH6A6rqJRzMHME",
+          },
+        }
+      );
+      const data = await response.json();
+      setMovieList(data.results);
+      console.log(data);
+    };
+    getDataFromApi();
+    // check change on "page" and "typeOfList"
+  }, [page, typeOfList]);
+
+  // number of pages
+  const maxPage = 500;
+  const thresholdStart = 3;
+  const thresholdEnd = maxPage - 2;
+  const numbersOfPageLink = [];
+
+  if (page <= thresholdStart) {
+    numbersOfPageLink.push(1, 2, 3, 4, 5, "...");
+  } else if (page >= thresholdEnd) {
+    numbersOfPageLink.push(
+      "...",
+      maxPage - 4,
+      maxPage - 3,
+      maxPage - 2,
+      maxPage - 1,
+      maxPage
+    );
+  } else {
+    numbersOfPageLink.push(
+      "...",
+      page - 2,
+      page - 1,
+      page,
+      page + 1,
+      page + 2,
+      "..."
+    );
+  }
+
+  // buttons
+  function handleGetPage(e) {
+    const newPage = Number(e.target.value);
+    setPage(newPage);
+  }
+
+  return (
+    <section className="section-list-pop">
+      {/* buttons for page */}
+      <span>
+        {numbersOfPageLink.map((page) => {
+          if (typeof page === "string") {
+            return <p>{page}</p>;
+          } else {
+            return (
+              <button onClick={handleGetPage} value={page}>
+                {page}
+              </button>
+            );
+          }
+        })}
+      </span>
+
+      {/* mapping the list */}
+      <div>
+        {movieList.map((movie) => {
+          return (
+            <div key={movie.id}>
+              <Link to={`/detail/${movie.id}`}>
+                <h2>title: {movie.title}</h2>
+                <img
+                  src={`${poster_base_url}${poster_size[0]}/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+export default List;
