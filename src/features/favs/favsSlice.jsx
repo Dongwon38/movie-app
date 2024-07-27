@@ -19,7 +19,7 @@ const initialState = {
   items: favsFromLocalStorage.items,
 };
 
-// get index when I want to delete it from the fav-list
+// get index which I want to delete from the fav-list
 function getIndex(item, list) {
   return list.findIndex((listItem) => listItem === item);
 }
