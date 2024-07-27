@@ -3,11 +3,13 @@ import List from "../components/List";
 
 function PageHome() {
   const [typeOfList, setTypeOfList] = useState("popular");
+  const [page, setPage] = useState(1);
 
   function handleListTypeChange(e) {
     const newType = e.target.value;
     if (newType !== typeOfList) {
-      return setTypeOfList(newType);
+      setTypeOfList(newType);
+      setPage(1);
     }
   }
 
@@ -33,7 +35,7 @@ function PageHome() {
         ))}
       </div>
       <h2>{typeOfList}</h2>
-      <List typeOfList={typeOfList} />
+      <List typeOfList={typeOfList} page={page} setPage={setPage} />
     </div>
   );
 }
