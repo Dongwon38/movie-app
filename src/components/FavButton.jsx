@@ -46,17 +46,15 @@ function FavButton({ movieId }) {
   const isFav = favList.some((item) => item.id === movieId);
 
   return (
-    <div>
-      {isFav ? (
-        <button onClick={handleDislike} value={movieId}>
-          Dislike
-        </button>
-      ) : (
-        <button onClick={handleLike} value={movieId}>
-          Like
-        </button>
-      )}
-    </div>
+    <button
+      onClick={isFav ? handleDislike : handleLike}
+      aria-pressed={isFav}
+      value={movieId}
+      type="button"
+      className="btn-like"
+    >
+      {isFav ? "Dislike" : "Like"}
+    </button>
   );
 }
 

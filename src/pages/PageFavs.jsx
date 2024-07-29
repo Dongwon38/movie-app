@@ -45,26 +45,27 @@ function PageFavs() {
   }, [favList]);
 
   return (
-    <div>
-      <h1>Page Favourites</h1>
-      {/* mapping the list */}
-      <div>
-        {dataList.map((movie) => {
-          return (
-            <div key={movie.id}>
+    <main className="main-favs">
+      <h1>Favourites</h1>
+      <ul>
+        {dataList.map((movie) => (
+          <li key={movie.id} className="movie-item">
+            <article>
               <Link to={`/detail/${movie.id}`}>
-                <h2>title: {movie.title}</h2>
-                <img
-                  src={`${poster_base_url}${poster_size[0]}/${movie.poster_path}`}
-                  alt={movie.title}
-                />
+                <h2>{movie.title}</h2>
+                <figure>
+                  <img
+                    src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </figure>
               </Link>
               <FavButton movieId={movie.id} />
-            </div>
-          );
-        })}
-      </div>
-    </div>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
