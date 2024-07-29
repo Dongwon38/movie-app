@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <div className="hide">
-        <Link>test 1</Link>
-        <Link>test 2</Link>
-        <Link>test 3</Link>
-      </div>
-      <Link to="/favourites">Favourites</Link>
-      <Link to="/about">About</Link>
+    <nav className="main-nav">
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/favourites">Favourites</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+      </ul>
     </nav>
   );
 }

@@ -3,6 +3,8 @@
 
 body {
   background-color: $test-color;
+  font-family: $primary-font;
+  color: $text-primary-color;
 }
 
 h1,
@@ -14,6 +16,6 @@ h6,
 p {
 }
 
-.hide {
-  display: none;
+a {
+  color: $text-primary-color;
 }

@@ -367,12 +367,26 @@ html {
   z-index: 100000;
 }
 
-body {
-  background-color: lightgray;
+a {
+  text-decoration: none;
 }
 
-.hide {
-  display: none;
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: lightgray;
+  font-family: monospace;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+body {
+  background-color: #121212;
 }
 
 /*# sourceMappingURL=styles.css.map */
