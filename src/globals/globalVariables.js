@@ -1,5 +1,5 @@
 export const endPoint = "https://api.themoviedb.org/3/movie/";
-export const poster_base_url = "https://image.tmdb.org/t/p/";
+export const poster_base_url = "https://image.tmdb.org/t/p";
 export const poster_size = [
   "w92",
   "w154",

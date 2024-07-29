@@ -55,7 +55,7 @@ function PageFavs() {
               <Link to={`/detail/${movie.id}`}>
                 <h2>title: {movie.title}</h2>
                 <img
-                  src={`${poster_base_url}${poster_size[0]}/${movie.poster_path}`}
+                  src={`${poster_base_url}/${poster_size[0]}/${movie.poster_path}`}
                   alt={movie.title}
                 />
               </Link>
