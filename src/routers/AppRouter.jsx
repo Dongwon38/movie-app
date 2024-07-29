@@ -16,7 +16,7 @@ function AppRouter() {
         <Nav />
         <Routes>
           <Route path="/" exact element={<PageHome />} />
-          <Route path="/detail" exact element={<PageDetail />} />
+          <Route path="/detail/:id" exact element={<PageDetail />} />
           <Route path="/favourites" exact element={<PageFavs />} />
           <Route path="/about" exact element={<PageAbout />} />
         </Routes>
