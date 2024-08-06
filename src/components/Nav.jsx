@@ -1,20 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 function Nav() {
+  const { menuState, toggleOn, toggleOff } = useContext(GlobalContext);
+
+  function handleMenuClick() {
+    {
+      menuState === true ? toggleOff() : toggleOn();
+    }
+  }
+
   return (
     <nav className="main-nav">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/favourites">Favourites</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
+      <div className="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search for a movie..." />
+      </div>
+      <button className="btn-menu" onClick={handleMenuClick}>
+        {menuState === true ? (
+          <i class="fa-solid fa-xmark"></i>
+        ) : (
+          <i class="fa-solid fa-bars"></i>
+        )}
+      </button>
     </nav>
   );
 }

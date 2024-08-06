@@ -1,6 +1,7 @@
 @use "vars" as *;
 @import "globals";
 
-// @mixin name() {
-//
-// }
+@mixin normalize-object() {
+  background-color: transparent;
+  border: none;
+}

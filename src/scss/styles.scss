@@ -4,6 +4,9 @@
 @use "./base/vars";
 @use "./base/mixins";
 
+// utilities
+@use "./utilities/intro-animation";
+
 // pages
 @use "./pages/home";
 @use "./pages/about";
@@ -14,6 +17,7 @@
 @use "./components/header";
 @use "./components/footer";
 @use "./components/nav";
+@use "./components/menu-layer";
 @use "./components/list";
 @use "./components/page-button";
 @use "./components/fav-button";

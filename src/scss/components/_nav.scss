@@ -2,5 +2,41 @@
 @use "../base/mixins" as *;
 @import "typography";
 
+<<<<<<< HEAD
 
 .main-nav {}
+=======
+.main-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: $bg-secondary-color;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.btn-menu {
+  @include normalize-object;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.search-bar i {
+  margin-right: 0.5rem;
+}
+.search-bar input {
+  @include normalize-object;
+  border-bottom: 2px solid white;
+  outline: none;
+  font-size: 1rem;
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: white;
+}
+>>>>>>> staging-branch
