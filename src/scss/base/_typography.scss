@@ -1,11 +1,9 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-body {
-  background-color: $test-color;
-  font-family: $primary-font;
-  color: $text-primary-color;
-}
+
+
+
 
 h1,
 h2,
@@ -14,8 +12,7 @@ h4,
 h5,
 h6,
 p {
+  color: #fff;
 }
 
-a {
-  color: $text-primary-color;
-}
+a {}

@@ -1,11 +1,10 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
+@import "typography";
 
-.page-nav {
-}
 
-.page-nav p {
-}
+.page-nav {}
 
-.page-nav button {
-}
+.page-nav p {}
+
+.page-nav button {}
