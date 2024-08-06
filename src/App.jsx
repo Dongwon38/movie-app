@@ -1,6 +1,8 @@
 import React from "react";
 import AppRouter from "./routers/AppRouter";
 import "./styles/styles.css";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 //For Animation Page
 import IntroPage from "./pages/IntroPage";
@@ -10,11 +12,13 @@ function App() {
   return (
     <>
       <div className="end-animation">
-      <SvgAnimation/>
-      <IntroPage/>
+        <SvgAnimation/>
+        <IntroPage/>
       </div>
       <div className="movie-mock-up-class">
-      <AppRouter />
+        <Provider store={store}>
+          <AppRouter />
+        </Provider>
       </div>
     </>
   );

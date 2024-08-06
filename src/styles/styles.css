@@ -367,8 +367,26 @@ html {
   z-index: 100000;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
 body {
   background-color: lightgray;
+  font-family: monospace;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+body {
+  background-color: #121212;
 }
 
 .end-animation {

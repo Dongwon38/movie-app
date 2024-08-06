@@ -5,5 +5,16 @@
 @use "./base/mixins";
 @use "./intro-animation";
 
+// pages
+@use "./pages/home";
+@use "./pages/about";
+@use "./pages/detail";
+@use "./pages/favs";
+
 // components
-// @use "./components/file name";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/nav";
+@use "./components/list";
+@use "./components/page-button";
+@use "./components/fav-button";
