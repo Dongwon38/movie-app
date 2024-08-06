@@ -4,6 +4,9 @@
 @use "./base/vars";
 @use "./base/mixins";
 
+// utilities
+@use "./utilities/intro-animation";
+
 // pages
 @use "./pages/home";
 @use "./pages/about";
