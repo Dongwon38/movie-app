@@ -385,10 +385,6 @@ a {
   color: white;
 }
 
-body {
-  background-color: #121212;
-}
-
 .end-animation {
   position: absolute;
   background-color: black;
@@ -552,6 +548,82 @@ body {
     height: 16rem;
     width: 16rem;
   }
+}
+body {
+  background-color: #121212;
+}
+
+.main-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #b30000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.btn-menu {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.search-bar i {
+  margin-right: 0.5rem;
+}
+
+.search-bar input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  font-size: 1rem;
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: white;
+}
+
+.toggle-on,
+.toggle-off {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.575);
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toggle-on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toggle-off {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-layer {
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.menu-layer li {
+  margin: 1rem 0;
+}
+
+.movie-item {
+  margin: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

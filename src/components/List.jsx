@@ -43,7 +43,6 @@ function List({ category, page, setPage }) {
         return (
           <article key={movie.id} className="movie-item">
             <Link to={`/detail/${movie.id}`}>
-              <h2>{movie.title}</h2>
               <img
                 src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
                 alt={movie.title}

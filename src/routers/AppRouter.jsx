@@ -7,21 +7,26 @@ import PageHome from "../pages/PageHome";
 import PageDetail from "../pages/PageDetail";
 import PageFavs from "../pages/PageFavs";
 import PageAbout from "../pages/PageAbout";
+import { GlobalProvider } from "../context/GlobalState";
+import MenuLayer from "../components/MenuLayer";
 
 function AppRouter() {
   return (
     <BrowserRouter>
-      <div className="wrapper">
-        <Header />
-        <Nav />
-        <Routes>
-          <Route path="/" exact element={<PageHome />} />
-          <Route path="/detail/:id" exact element={<PageDetail />} />
-          <Route path="/favourites" exact element={<PageFavs />} />
-          <Route path="/about" exact element={<PageAbout />} />
-        </Routes>
-        <Footer />
-      </div>
+      <GlobalProvider>
+        <div className="wrapper">
+          <Header />
+          <MenuLayer />
+          <Nav />
+          <Routes>
+            <Route path="/" exact element={<PageHome />} />
+            <Route path="/detail/:id" exact element={<PageDetail />} />
+            <Route path="/favourites" exact element={<PageFavs />} />
+            <Route path="/about" exact element={<PageAbout />} />
+          </Routes>
+          <Footer />
+        </div>
+      </GlobalProvider>
     </BrowserRouter>
   );
 }

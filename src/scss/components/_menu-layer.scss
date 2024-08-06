@@ -1,0 +1,34 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+.toggle-on,
+.toggle-off {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.575);
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.toggle-on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toggle-off {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-layer {
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  text-align: right;
+}
+.menu-layer li {
+  margin: 1rem 0;
+}

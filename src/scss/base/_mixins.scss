@@ -3,3 +3,8 @@
 // @mixin name() {
 //
 // }
+
+@mixin normalize-object() {
+  background-color: transparent;
+  border: none;
+}
