@@ -34,9 +34,9 @@ function FavButton({ movieId }) {
   function handleDislike() {
     // new list except the movie that clicked dislike button
     const newList = favList.filter((item) => item.id !== movieId);
-
+    const favMovie = { id: movieId };
     // dispatch this movie to remove from the localstorage
-    dispatch(deleteFav(movieId));
+    dispatch(deleteFav(favMovie));
 
     // update favList on this page
     setFavList(newList);
