@@ -1,5 +1,6 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
+@import "typography";
 
 .toggle-on,
 .toggle-off {
@@ -29,6 +30,7 @@
   font-size: 1.5rem;
   text-align: right;
 }
+
 .menu-layer li {
   margin: 1rem 0;
 }

@@ -1,9 +1,11 @@
 import React from "react";
+import background from '../../public/assets/images/bg/aboutPg-m.png';
+
 
 function PageAbout() {
   return (
     <main class="page.about">
-      <img src="images/bg/aboutPg-m.png" alt="family watching movie" />
+      <img src="../bg/aboutPg-m.png" alt="family watching movie" />
 
       <h1>Welcome to MOVIEPIN</h1>
       <p>Hey there, welcome to MOVIEPIN! We're excited to help you discover movies that match your unique tastes.</p>
