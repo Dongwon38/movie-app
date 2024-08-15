@@ -20,8 +20,8 @@ const initialState = {
 };
 
 // get index which I want to delete from the fav-list
-function getIndex(item, list) {
-  return list.findIndex((listItem) => listItem === item);
+function getIndex(payload, items) {
+  return items.findIndex((item) => item.id === payload.id);
 }
 
 export const favsSlice = createSlice({
@@ -36,8 +36,12 @@ export const favsSlice = createSlice({
       localStorage.setItem(storageName, JSON.stringify(newFavs));
     },
     deleteFav: (state, action) => {
-      const listCopy = state.items;
-      listCopy.splice(getIndex(action.payload, state.items), 1);
+      const listCopy = state.items.slice();
+      const indexToDelete = getIndex(action.payload, state.items);
+      if (indexToDelete !== -1) {
+        listCopy.splice(indexToDelete, 1);
+      }
+
       state.items = listCopy;
 
       // store in local storage
