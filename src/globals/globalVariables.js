@@ -1,4 +1,5 @@
 export const endPoint = "https://api.themoviedb.org/3/movie/";
+export const searchEndPoint = "https://api.themoviedb.org/3/search/movie";
 export const poster_base_url = "https://image.tmdb.org/t/p";
 export const poster_size = [
   "w92",

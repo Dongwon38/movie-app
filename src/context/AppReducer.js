@@ -8,6 +8,10 @@ function AppReducer(state, action) {
       return {
         menuState: false,
       };
+    case "SEARCH":
+      return {
+        searchText: action.payload,
+      };
   }
 }
 
