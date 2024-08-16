@@ -11,7 +11,7 @@ import FavButton from "../components/FavButton";
 function PageFavs() {
   // to store fav list coming from local storage
   const [favList, setFavList] = useState([]);
-  // to store entire info about fav list
+  // to store entire movie from fav list
   const [dataList, setDataList] = useState([]);
 
   // bring data from local storage
@@ -24,7 +24,7 @@ function PageFavs() {
 
   // get only fav movie Data From API
   const getDataFromApi = async (movieId) => {
-    const response = await fetch(`${endPoint}${movieId}"?language=en-US`, {
+    const response = await fetch(`${endPoint}${movieId}`, {
       method: "GET",
       headers: {
         accept: "application/json",

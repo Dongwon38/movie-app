@@ -3,6 +3,7 @@ import AppReducer from "./AppReducer";
 
 const initialState = {
   menuState: false,
+  searchText: null,
 };
 
 const GlobalContext = createContext(initialState);
@@ -22,12 +23,21 @@ function GlobalProvider({ children }) {
       payload: null,
     });
   };
+  const search = (searchText) => {
+    dispatch({
+      type: "SEARCH",
+      payload: searchText,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
         menuState: state.menuState,
         toggleOn,
         toggleOff,
+        searchText: state.searchText,
+        search,
       }}
     >
       {children}

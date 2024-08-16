@@ -1,9 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import List from "../components/List";
 
 function PageHome() {
   const [category, setCategory] = useState("popular");
   const [page, setPage] = useState(1);
+  const btnRefs = useRef([]);
+
+  const categories = [
+    { label: "Popular", value: "popular" },
+    { label: "Now Playing", value: "now_playing" },
+    { label: "Top Rated", value: "top_rated" },
+    { label: "Upcoming", value: "upcoming" },
+  ];
 
   function handleSetCategory(e) {
     const newType = e.target.value;
@@ -13,29 +21,36 @@ function PageHome() {
     }
   }
 
-  const categories = [
-    { label: "Popular", value: "popular" },
-    { label: "Now Playing", value: "now_playing" },
-    { label: "Top Rated", value: "top_rated" },
-    { label: "Upcoming", value: "upcoming" },
-  ];
+  useEffect(() => {
+    const index = categories.findIndex((c) => c.value === category);
+    if (btnRefs.current[index]) {
+      btnRefs.current[index].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, [category]);
 
   return (
     <main className="main-home">
-      <h1>Home</h1>
-      <div>
-        {categories.map((category) => (
-          <button
-            key={category.value}
-            onClick={handleSetCategory}
-            value={category.value}
-            className="btn-category"
-          >
-            {category.label}
-          </button>
-        ))}
+      <div className="sub-nav-container">
+        <nav className="category-nav">
+          {categories.map((cat, index) => (
+            <button
+              key={cat.value}
+              onClick={handleSetCategory}
+              value={cat.value}
+              ref={(el) => (btnRefs.current[index] = el)}
+              className={`btn-category ${
+                category === cat.value ? "active" : ""
+              }`}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </nav>
       </div>
-      <h2>{category}</h2>
       <List category={category} page={page} setPage={setPage} />
     </main>
   );
