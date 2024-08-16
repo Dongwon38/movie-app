@@ -6,7 +6,48 @@ body {
 }
 
 .main-home {
+  display: flex;
+  flex-direction: column;
 }
 
-.btn-category {
+.main-home h1 {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sub-nav-container {
+  position: fixed;
+  bottom: 3rem;
+  width: 100%;
+  background-color: grey;
+}
+
+.category-nav {
+  display: flex;
+  padding: 0.5rem;
+  overflow: scroll;
+  white-space: nowrap;
+}
+
+// horizontal-scroll & hide bar
+.category-nav::-webkit-scrollbar {
+  display: none;
+}
+// horizontal-scroll & hide bar for firefox
+.category-nav {
+  scrollbar-width: none;
+}
+
+.category-nav button {
+  color: white;
+  border: none;
+  background-color: transparent;
+  padding: 4px 0.5rem;
+  margin: 0 2px;
+}
+
+.btn-category.active {
+  border-bottom: 4px solid $primary-color;
+  font-weight: bold;
 }

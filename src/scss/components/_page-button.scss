@@ -2,10 +2,26 @@
 @use "../base/mixins" as *;
 
 .page-nav {
+  display: flex;
+  justify-content: center;
+
+  gap: 1rem;
 }
 
-.page-nav p {
+.page-nav p,
+.page-nav button {
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .page-nav button {
+  background-color: transparent;
+  border: none;
+}
+
+.page-nav button.active {
+  background-color: $primary-color; /* 원하는 하이라이트 색상 */
+  color: white;
+  font-weight: bold;
 }

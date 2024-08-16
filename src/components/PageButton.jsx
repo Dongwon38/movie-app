@@ -45,7 +45,12 @@ function PageButton({ page, changePage, totalPages }) {
           return <p key={index}>{pageNumber}</p>;
         } else {
           return (
-            <button key={index} onClick={handleGetPage} value={pageNumber}>
+            <button
+              key={index}
+              onClick={handleGetPage}
+              value={pageNumber}
+              className={pageNumber === page ? "active" : ""}
+            >
               {pageNumber}
             </button>
           );

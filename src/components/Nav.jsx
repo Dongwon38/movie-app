@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import { Form } from "react-router-dom";
 
 function Nav() {
   const { menuState, toggleOn, toggleOff, search } = useContext(GlobalContext);
