@@ -21,8 +21,8 @@ function Nav() {
   return (
     <nav className="main-nav">
       <div className="search-bar">
-        <i class="fa-solid fa-magnifying-glass"></i>
         <form onSubmit={submitText}>
+          <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" placeholder="Search for a movie..." />
         </form>
       </div>
