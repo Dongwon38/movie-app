@@ -600,6 +600,131 @@ body {
   font-weight: bold;
 }
 
+body {
+  background-color: #333333;
+}
+
+.main-detail h1 {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.main-detail .img-poster {
+  display: block;
+  margin: 0 auto;
+  width: 18.5rem;
+  text-align: center;
+  box-shadow: 2px 3px 15px black;
+}
+
+.container-grid-top {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 16rem 1fr;
+  grid-template-rows: auto 1fr;
+}
+.container-grid-top .feature-like-not {
+  grid-column: 2/2;
+  margin: 0;
+}
+.container-grid-top .container-year-genre {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  margin: 0;
+}
+
+.feature-like-not {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+  overflow-wrap: break-word;
+  gap: 9rem;
+}
+.feature-like-not .movie-title {
+  font-size: 1rem;
+}
+.feature-like-not .btn-like {
+  height: 1.2rem;
+  font-size: 0.5rem;
+}
+
+.container-year-genre {
+  display: flex;
+  justify-content: center;
+}
+
+.container-rating-info {
+  display: grid;
+  grid-template-columns: 1fr 17rem 1fr;
+  grid-template-rows: auto 1fr;
+}
+.container-rating-info .movie-rating {
+  grid-column: 2/2;
+  margin: 0.5rem;
+}
+.container-rating-info .movie-overview {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  margin: 0.5rem;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 17rem 1fr;
+  grid-template-rows: auto 1fr;
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;
+}
+.container-grid h3 {
+  grid-column: 2/2;
+  margin: 0.5rem;
+}
+.container-grid .container-scroll {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  margin: 0.5rem;
+}
+
+.container-scroll {
+  display: flex;
+  padding: 0.5rem;
+  overflow: scroll;
+  overflow-x: scroll;
+  width: 15.7rem;
+  margin: 0;
+  padding: 0;
+}
+.container-scroll .cast-list {
+  padding-left: none;
+  display: flex;
+  gap: 1.5rem;
+  padding-left: 0;
+  height: 12rem;
+}
+.container-scroll .cast-list img {
+  box-shadow: 1px 2px 5px black;
+  border-radius: 8px;
+}
+.container-scroll .cast-list li:nth-child(2n) {
+  background-color: #b30000;
+  height: 11rem;
+  width: 4.89rem;
+  border-radius: 8px;
+}
+.container-scroll .cast-list li:nth-child(2n) p {
+  margin-top: 0.3rem;
+  margin-left: 0.2rem;
+}
+.container-scroll .cast-list .cast-member {
+  width: 86.09px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.container-scroll {
+  margin-bottom: 4rem;
+}
+
 .logo-main {
   margin: 1rem 3.5rem;
 }

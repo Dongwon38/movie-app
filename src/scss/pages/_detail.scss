@@ -1,8 +1,156 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-.main-detail {
+
+body{
+  background-color: $bq-dark-grey;
 }
+.main-detail {
+  
+ h1{
+  text-align: center;
+  margin-top: 2.5rem;
+ }
+ .img-poster{
+  display: block;
+  margin: 0 auto;
+  width: 18.5rem;
+  text-align: center;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
+ }
+}
+//grid container for the diss & like and  ganera 
+.container-grid-top {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 16rem 1fr;
+  grid-template-rows: auto 1fr;
+  .feature-like-not{
+    grid-column: 2/2;
+    margin: 0;
+  }
+  .container-year-genre{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    margin: 0;
+  }
+}
+
+
+//for my like and diss like section
+.feature-like-not {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+  overflow-wrap: break-word;
+  gap: 9rem;
+
+  .movie-title{
+    font-size: 1rem;
+  }
+  .btn-like{
+    height: 1.2rem;
+    font-size: 0.5rem;
+  }
+}
+
+//container for the years and genra
+.container-year-genre{
+display: flex;
+justify-content: center;
+// gap: 0.6rem;
+
+}
+
+.container-rating-info {
+display: grid;
+grid-template-columns: 1fr 17rem 1fr;
+grid-template-rows: auto 1fr;
+
+  .movie-rating{
+    grid-column: 2/2;
+    margin: 0.5rem;
+  }
+  .movie-overview{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    margin: 0.5rem;
+  }
+
+}
+//grid tempelte compied from above for the main cast
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 17rem 1fr;
+  grid-template-rows: auto 1fr;
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;
+  
+  h3{
+    grid-column: 2/2;
+    margin: 0.5rem;
+  }
+  .container-scroll{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    margin: 0.5rem;
+  }
+
+}
+
+//horizontal scroll for the cast
+.container-scroll{
+    display: flex;
+    padding: 0.5rem;
+    overflow: scroll;
+    overflow-x: scroll;
+    width: 15.7rem;
+    margin: 0;
+    padding: 0;
+    .cast-list{
+      padding-left: none;
+      display: flex;
+      gap: 1.5rem;
+      padding-left: 0;
+      height: 12rem;
+      img{
+        box-shadow: 1px 2px 5px($box-shadow-color-black) ;
+        border-radius: 8px;
+      }
+      
+      //styles for every second child in ul
+      li:nth-child(2n) {
+        background-color: $bg-secondary-color;
+        height: 11rem;
+        width: 4.89rem;
+        border-radius: 8px;
+        p {
+          margin-top: 0.3rem;
+          margin-left: 0.2rem;
+        }
+      }
+      .cast-member{
+        width: 86.09px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+     
+      
+    }
+}
+
+.container-scroll{
+  margin-bottom: 4rem;
+}
+
+
+//78.27px width for the back image
+
+
+
+
 .release-year {
 }
 .genre {
