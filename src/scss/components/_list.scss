@@ -2,12 +2,16 @@
 @use "../base/mixins" as *;
 
 .section-list {
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
 }
 
 .movie-item {
   margin: 1rem;
+  // background: white;
+  padding: 0.5rem 0.25rem 3.5rem;
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 35%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
 }
 
 .movie-item img {
+
 }
