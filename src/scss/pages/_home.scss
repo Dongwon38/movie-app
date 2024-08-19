@@ -27,7 +27,10 @@ body {
   display: flex;
   padding: 0.5rem;
   overflow: scroll;
-  white-space: nowrap;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
+  height: 3.5rem;
+  // white-space: nowrap;
 }
 
 // horizontal-scroll & hide bar
