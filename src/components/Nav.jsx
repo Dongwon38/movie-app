@@ -1,9 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { useNavigate } from "react-router-dom";
 
 function Nav() {
   const { menuState, toggleOn, toggleOff, search } = useContext(GlobalContext);
+  const navigate = useNavigate();
 
   function handleMenuClick() {
     {
@@ -14,6 +16,7 @@ function Nav() {
   function submitText(e) {
     e.preventDefault();
     const InputText = e.target[0].value;
+    navigate("/");
     search(InputText);
   }
 
