@@ -16,8 +16,8 @@ function Nav() {
   function submitText(e) {
     e.preventDefault();
     const InputText = e.target[0].value;
-    navigate("/");
     search(InputText);
+    navigate("/search");
   }
 
   return (

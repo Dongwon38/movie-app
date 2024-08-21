@@ -17,7 +17,7 @@ function List({ category, page, setPage }) {
   const [totalPages, setTotalPages] = useState(null);
 
   // get GlobalContext
-  const { searchText } = useContext(GlobalContext);
+  const { searchText, countMovies } = useContext(GlobalContext);
 
   // Check if there is a search text
   const fetchUrl =
@@ -38,6 +38,7 @@ function List({ category, page, setPage }) {
       const data = await response.json();
       setMovieList(data.results);
       setTotalPages(data.total_pages);
+      countMovies(data.total_results);
       console.log(data);
     };
     getDataFromApi();

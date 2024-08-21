@@ -4,6 +4,7 @@ import AppReducer from "./AppReducer";
 const initialState = {
   menuState: false,
   searchText: null,
+  totalMoives: null,
 };
 
 const GlobalContext = createContext(initialState);
@@ -11,13 +12,13 @@ const GlobalContext = createContext(initialState);
 function GlobalProvider({ children }) {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  const toggleOn = (menuState) => {
+  const toggleOn = () => {
     dispatch({
       type: "TOGGLE_ON",
       payload: null,
     });
   };
-  const toggleOff = (menuState) => {
+  const toggleOff = () => {
     dispatch({
       type: "TOGGLE_OFF",
       payload: null,
@@ -29,6 +30,12 @@ function GlobalProvider({ children }) {
       payload: searchText,
     });
   };
+  const countMovies = (totalMoives) => {
+    dispatch({
+      type: "COUNT_MOVIES",
+      payload: totalMoives,
+    });
+  };
 
   return (
     <GlobalContext.Provider
@@ -38,6 +45,8 @@ function GlobalProvider({ children }) {
         toggleOff,
         searchText: state.searchText,
         search,
+        totalMoives: state.totalMoives,
+        countMovies,
       }}
     >
       {children}
