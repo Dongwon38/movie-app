@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -378,7 +379,7 @@ ul {
 
 body {
   background-color: lightgray;
-  font-family: monospace;
+  font-family: "Inter";
   color: white;
 }
 
