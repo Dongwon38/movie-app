@@ -44,11 +44,14 @@ function PageDetail() {
   return (
     <main className="main-detail">
       <h1>Overview</h1>
+      <div className="react-backdrop">
+      <img className="back-drop" src={`${poster_base_url}/${poster_size[6]}/${movie.backdrop_path}`} alt="image of backdrop from movie API" />
+      <div className="container-desktop">
       <img
         className="img-poster"
         src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
         alt={movie.title}
-      />
+        />
       <div className="container-grid-top">
         <div className="feature-like-not">
           <h2 className="movie-title">{movie.title}</h2>
@@ -76,18 +79,21 @@ function PageDetail() {
                 person.profile_path && (
                   <li key={person.id} className="cast-member">
                     <img
-                      src={`${poster_base_url}/${poster_size[0]}${person.profile_path}`}
+                      src={`${poster_base_url}/${poster_size[4]}${person.profile_path}`}
                       alt={person.name}
                       className="cast-member-photo"
-                    />
+                      />
                     <p className="cast-member-name">{person.name}</p>
                   </li>
                 )
-            )}
+              )}
           </ul>
           </div>
         </div>
+
+      </div>
       
+       </div>
     </main>
   );
 }
