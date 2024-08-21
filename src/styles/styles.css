@@ -600,6 +600,14 @@ body {
   font-weight: bold;
 }
 
+.about-page {
+  padding: 3rem;
+}
+
+.about-title {
+  color: red;
+}
+
 .logo-main {
   margin: 1rem 3.5rem;
 }

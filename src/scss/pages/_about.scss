@@ -1,2 +1,12 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
+
+
+.about-page{
+    padding: 3rem;
+}
+.about-title {
+    color: red;
+
+}
+
