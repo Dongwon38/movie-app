@@ -7,7 +7,25 @@
 
 .movie-item {
   margin: 1rem;
+  // background: white;
+  padding: 0.5rem 0.25rem 1rem;
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 35%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
 }
 
 .movie-item img {
+
+}
+
+.list-links {
+  display: flex;
+  justify-content: space-evenly;
+  // margin: 0.5rem;
+  padding: 1rem;
+
+  a {
+    color: black;
+    background-color: white;
+    border-radius: 20%;
+    padding: 0 1.5rem;
+  }
 }

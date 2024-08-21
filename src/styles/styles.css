@@ -576,7 +576,8 @@ body {
   display: flex;
   padding: 0.5rem;
   overflow: scroll;
-  white-space: nowrap;
+  background: linear-gradient(0deg, rgb(2, 0, 36) 0%, rgb(142, 42, 42) 40%, rgb(0, 0, 0) 100%);
+  height: 3.5rem;
 }
 
 .category-nav::-webkit-scrollbar {
@@ -891,7 +892,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 3rem;
-  background-color: #b30000;
+  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -961,6 +962,20 @@ body {
 
 .movie-item {
   margin: 1rem;
+  padding: 0.5rem 0.25rem 1rem;
+  background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgb(142, 42, 42) 35%, rgb(142, 42, 42) 40%, rgb(0, 0, 0) 100%);
+}
+
+.list-links {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+.list-links a {
+  color: black;
+  background-color: white;
+  border-radius: 20%;
+  padding: 0 1.5rem;
 }
 
 .page-nav {
@@ -985,10 +1000,6 @@ body {
   background-color: #ff0808; /* 원하는 하이라이트 색상 */
   color: white;
   font-weight: bold;
-}
-
-.btn-like {
-  background-color: aliceblue;
 }
 
 /*# sourceMappingURL=styles.css.map */
