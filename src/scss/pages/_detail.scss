@@ -1,23 +1,349 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
+
+//setting backdrop to display none until tabled mode
+
+
+body{
+  background-color: $bq-dark-grey;
+}
 .main-detail {
+  
+ h1{
+  text-align: center;
+  margin-top: 2.5rem;
+ }
+ .img-poster{
+  display: block;
+  margin: 0 auto;
+  width: 18.5rem;
+  text-align: center;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
+ }
 }
-.release-year {
+//grid container for the diss & like and  ganera 
+.container-grid-top {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 16rem 1fr;
+  grid-template-rows: auto 1fr;
+  .feature-like-not{
+    grid-column: 2/2;
+    margin: 0;
+  }
+  .container-year-genre{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    margin: 0;
+  }
 }
-.genre {
+
+
+//for my like and diss like section
+.feature-like-not {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 1rem;
+  overflow-wrap: break-word;
+  gap: 6rem;
+
+  .movie-title{
+    font-size: 1rem;
+    
+  }
+  .btn-like{
+    height: 1.2rem;
+    font-size: 0.5rem;
+  }
 }
-.movie-title {
+
+//container for the years and genra
+.container-year-genre{
+display: flex;
+justify-content: flex-start;
+gap: 0.3rem;
+p {
+  font-size: 0.7rem;
 }
-.movie-rating {
+
 }
-.movie-overview {
+
+.container-rating-info {
+display: grid;
+grid-template-columns: 1fr 17rem 1fr;
+grid-template-rows: auto 1fr;
+
+  .movie-rating{
+    grid-column: 2/2;
+    margin: 0.5rem;
+  }
+  .movie-overview{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    margin: 0.5rem;
+  }
+
 }
-.cast-list {
+//grid tempelte compied from above for the main cast
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 17rem 1fr;
+  grid-template-rows: auto 1fr;
+  padding-top: 1.5rem;
+  padding-bottom: 5rem;
+  
+  h3{
+    grid-column: 2/2;
+    margin: 0.5rem;
+  }
+  .container-scroll{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    margin: 0.5rem;
+  }
+
 }
-.cast-member {
+
+//horizontal scroll for the cast
+.container-scroll{
+    display: flex;
+    padding: 0.5rem;
+    overflow: scroll;
+    overflow-x: scroll;
+    width: 15.7rem;
+    margin: 0;
+    padding: 0;
+    .cast-list{
+      padding-left: none;
+      display: flex;
+      gap: 1.5rem;
+      padding-left: 0;
+      height: 12rem;
+      img{
+        box-shadow: 1px 2px 5px($box-shadow-color-black) ;
+        border-radius: 8px;
+      }
+      
+      //styles for every second child in ul
+      li:nth-child(2n) {
+        background-color: $bg-secondary-color;
+        height: 11rem;
+        width: 4.89rem;
+        border-radius: 8px;
+        p {
+          margin-top: 0.3rem;
+          margin-left: 0.2rem;
+        }
+      }
+      .cast-member{
+        width: 5.38rem;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+     
+      
+    }
 }
-.cast-member-photo {
+
+.container-scroll{
+  margin-bottom: 4rem;
 }
-.cast-member-name {
+//styling for background image
+.back-drop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3;
 }
+
+//start of the mix width 768px tablet mode 
+
+
+
+@media (min-width: 48rem){
+  .main-detail {
+    .img-poster{
+      width: 25.5rem;
+     
+     }
+  }
+  
+  .container-grid-top{
+    grid-template-columns: 1fr 45rem 1fr;
+    font-size: 5rem;
+    .movie-title{
+      font-size: 3rem;
+    }
+    .btn-like{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+    .container-year-genre{
+      padding-left: 3.5rem;
+      gap: 1rem;
+      p{
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .container-rating-info{
+    grid-template-columns: 1fr 39rem 1fr;
+    font-size: 1.2rem;
+    p{
+      line-height: 2rem;
+    }
+  }
+  .container-grid{
+    grid-template-columns: 1fr 39rem 1fr;
+    //header
+    h3{
+      font-size: 2rem;
+    }
+    font-size: 1.0rem;
+    .container-scroll{
+      width: 38.5rem;
+      height: 20rem;
+    }
+    .cast-list{
+      height: 10rem;
+      gap:2rem;
+      .cast-member{
+        height: 10rem;
+        width: 7rem;
+        img{
+          width: 15rem;
+        }
+      }
+      li:nth-child(2n){
+        width: 6.5rem;
+        height: 15rem;
+      }
+
+    }
+  }
+
+
+
+}
+
+//start of the mix width 1444px desktopmode
+
+@media (min-width: 120rem){
+
+  .main-detail {
+    .img-poster{
+      width: 40rem;
+     
+     }
+  }
+  
+  .container-desktop{
+    display: grid;
+    grid-template-columns: 7rem 40rem 1fr 7rem;
+    grid-template-rows: 13rem 23rem 1fr;
+    
+      .img-poster{
+        grid-column: 2/2;
+        grid-row: 1/4;
+      }
+      .container-rating-info{
+        grid-column: 3/3;  
+        grid-row: 2/2;
+      }
+      .container-grid{
+        grid-column: 3/3;
+        grid-row: 3/3;
+      }
+      .container-grid-top{
+        grid-column: 3/3;
+        grid-row: 1/1;
+      }
+  }
+//grid top of page tittle
+  .container-grid-top{
+    grid-template-columns: 1fr 60rem 1fr;
+    font-size: 5rem;
+    .feature-like-not{
+      justify-content: flex-start;
+
+    }
+
+    .movie-title{
+      font-size: 5rem;
+      margin: 0;
+    }
+    .btn-like{
+        width: 4rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+    .container-year-genre{
+      gap: 1rem;
+      padding: 0;
+      p{
+        font-size: 1.7rem;
+      }
+    }
+  }
+//container rating info second box
+  .container-rating-info{
+    grid-template-columns: 1fr 60rem 1fr;
+    font-size: 2rem;
+    p{
+      line-height: 2.5rem;
+    }
+  }
+
+
+//container cast list 
+.container-grid{
+  grid-template-columns: 1fr 60rem 1fr;
+  //header
+  h3{
+    font-size: 2rem;
+  }
+  font-size: 1.0rem;
+  .container-scroll{
+    width: 59rem;
+    height: 22rem;
+  }
+  .cast-list{
+    height: 22rem;
+    gap:3rem;
+    .cast-member-name{
+      font-size: 1.5rem;
+    }
+    .cast-member{
+      height: 14rem;
+      width: 9rem;
+      img{
+        width: 15rem;
+      }
+    }
+    li:nth-child(2n){
+      width: 8rem;
+      height: 21rem;
+    
+    }
+
+  }
+}
+
+
+
+
+
+}
+
+
+
+
+

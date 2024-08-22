@@ -8,11 +8,17 @@ $secondary-color: white;
 $bg-primary-color: #121212;
 $bg-secondary-color: #b30000;
 
+//background-color from wireframe
+$bq-dark-grey: #333333;
+
 // text-color
 $text-primary-color: white;
 $text-secondary-color: black;
 
 // font-family
-$primary-font: monospace;
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+$primary-font: "Inter";
 $secondary-font: monospace;
 
+//boxshadow color for images
+$box-shadow-color-black: black;
