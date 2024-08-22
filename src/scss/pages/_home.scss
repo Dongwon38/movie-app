@@ -18,26 +18,55 @@ body {
   text-transform: uppercase;
 }
 
+.main-home h2 {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 // ======== sub-nav category ======== //
 .sub-nav-container {
   position: fixed;
-  bottom: 3rem;
+  z-index: 100;
+  bottom: 2.4rem;
+  height: 2.5rem;
   width: 100%;
-  background-color: grey;
+  max-width: $max-width;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
+  font-size: 14px;
+}
+
+@media (min-width: $tablet) {
+  .sub-nav-container {
+    position: static;
+  }
 }
 
 .category-nav {
-  display: flex;
-  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
   overflow: scroll;
-  background: linear-gradient(
-    0deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(142, 42, 42, 1) 40%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  height: 3.5rem;
+  background-color: rgb(131, 11, 11);
+  // background: linear-gradient(
+  //   0deg,
+  //   rgba(2, 0, 36, 1) 0%,
+  //   rgba(142, 42, 42, 1) 40%,
+  //   rgba(0, 0, 0, 1) 100%
+  // );
   // white-space: nowrap;
+}
+
+.category-nav button {
+  @include normalize-object;
+  color: white;
+  text-transform: uppercase;
+  padding: 0 4px;
+}
+
+.btn-category.active {
+  background-color: red;
+  font-weight: bold;
 }
 
 // horizontal-scroll & hide bar
@@ -47,17 +76,4 @@ body {
 // horizontal-scroll & hide bar for firefox
 .category-nav {
   scrollbar-width: none;
-}
-
-.category-nav button {
-  color: white;
-  border: none;
-  background-color: transparent;
-  padding: 4px 0.5rem;
-  margin: 0 2px;
-}
-
-.btn-category.active {
-  border-bottom: 4px solid $primary-color;
-  font-weight: bold;
 }

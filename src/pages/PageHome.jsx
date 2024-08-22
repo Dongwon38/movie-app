@@ -35,6 +35,8 @@ function PageHome() {
 
   return (
     <main className="main-home">
+      <HeroSection />
+
       <div className="sub-nav-container">
         <nav className="category-nav">
           {categories.map((cat, index) => (
@@ -52,7 +54,7 @@ function PageHome() {
           ))}
         </nav>
       </div>
-      <HeroSection />
+      <h2>{category} list</h2>
       <List category={category} page={page} setPage={setPage} />
     </main>
   );

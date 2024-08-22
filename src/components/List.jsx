@@ -52,22 +52,24 @@ function List({ category, page, setPage }) {
 
   return (
     <section className="section-list">
-      {movieList.map((movie) => {
-        return (
-          <article key={movie.id} className="movie-item">
-            <img
-              src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
-              alt={movie.title}
-            />
-            <div className="list-links">
-              <Link to={`/detail/${movie.id}`}>
-                <MoreInfo />
-              </Link>
-              <FavButton movieId={movie.id} />
-            </div>
-          </article>
-        );
-      })}
+      <div className="list-container">
+        {movieList.map((movie) => {
+          return (
+            <article key={movie.id} className="movie-item">
+              <img
+                src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <div className="list-links">
+                <Link to={`/detail/${movie.id}`}>
+                  <MoreInfo />
+                </Link>
+                <FavButton movieId={movie.id} />
+              </div>
+            </article>
+          );
+        })}
+      </div>
       <PageButton page={page} changePage={setPage} totalPages={totalPages} />
     </section>
   );
