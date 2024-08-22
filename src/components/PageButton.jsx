@@ -39,7 +39,7 @@ function PageButton({ page, changePage, totalPages }) {
   }
 
   return (
-    <nav className="page-nav">
+    <nav className="page-btn-container">
       {numbersOfPageLink.map((pageNumber, index) => {
         if (typeof pageNumber === "string") {
           return <p key={index}>{pageNumber}</p>;

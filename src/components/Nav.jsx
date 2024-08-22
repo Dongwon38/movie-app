@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { useNavigate } from "react-router-dom";
+import logo from "../../public/assets/images/logo/logo3.png";
 
 function Nav() {
   const { menuState, toggleOn, toggleOff, search } = useContext(GlobalContext);
@@ -22,19 +23,26 @@ function Nav() {
 
   return (
     <nav className="main-nav">
-      <div className="search-bar">
-        <form onSubmit={submitText}>
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search for a movie..." />
-        </form>
+      <div className="logo-main">
+        <a href="/">
+          <img src={logo} alt="website logo Movie-Pin" />
+        </a>
       </div>
-      <button className="btn-menu" onClick={handleMenuClick}>
-        {menuState === true ? (
-          <i class="fa-solid fa-xmark"></i>
-        ) : (
-          <i class="fa-solid fa-bars"></i>
-        )}
-      </button>
+      <div className="btn-container">
+        <div className="search-bar">
+          <form onSubmit={submitText}>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="search for a movie..." />
+          </form>
+        </div>
+        <button className="btn-menu" onClick={handleMenuClick}>
+          {menuState === true ? (
+            <i class="fa-solid fa-xmark"></i>
+          ) : (
+            <i class="fa-solid fa-bars"></i>
+          )}
+        </button>
+      </div>
     </nav>
   );
 }

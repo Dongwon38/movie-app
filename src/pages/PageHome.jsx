@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import List from "../components/List";
+import HeroSection from "../components/HeroSection";
 
 function PageHome() {
   const [category, setCategory] = useState("popular");
@@ -34,6 +35,8 @@ function PageHome() {
 
   return (
     <main className="main-home">
+      <HeroSection />
+
       <div className="sub-nav-container">
         <nav className="category-nav">
           {categories.map((cat, index) => (
@@ -51,6 +54,7 @@ function PageHome() {
           ))}
         </nav>
       </div>
+      <h2>{category} list</h2>
       <List category={category} page={page} setPage={setPage} />
     </main>
   );
