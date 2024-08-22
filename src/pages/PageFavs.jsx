@@ -7,6 +7,7 @@ import {
 } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
 import FavButton from "../components/FavButton";
+import Images from "../../public/assets/images/bg/fav-bg.jpg";
 
 function PageFavs() {
   // to store fav list coming from local storage
@@ -46,25 +47,29 @@ function PageFavs() {
 
   return (
     <main className="main-favs">
+      <img className="background-fav" src={Images} alt="Bakcground Image" />
       <h1>Favourites</h1>
-      <ul>
-        {dataList.map((movie) => (
-          <li key={movie.id} className="movie-item">
-            <article>
-              <Link to={`/detail/${movie.id}`}>
+      <div className="container-center">
+      <div className="container-scroll-2">
+        <ul className="cast-list-2">
+          {dataList.map((movie) => (
+            <li  key={movie.id} className="cast-member-2">
+                <Link to={`/detail/${movie.id}`}>
+                    <img
+                      className="cast-member-photo-2"
+                      src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
+                      alt={movie.title}
+                      />
+                </Link>
+                <div className="container-hover">
                 <h2>{movie.title}</h2>
-                <figure>
-                  <img
-                    src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
-                    alt={movie.title}
-                  />
-                </figure>
-              </Link>
-              <FavButton movieId={movie.id} />
-            </article>
-          </li>
-        ))}
-      </ul>
+                <FavButton movieId={movie.id} />
+                </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      </div>
     </main>
   );
 }
