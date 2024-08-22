@@ -1,12 +1,67 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-
-.about-page{
-    padding: 3rem;
+body {
+    background-color: $bq-dark-grey;
 }
-.about-title {
-    color: red;
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
 
 }
+
+.container-about p,
+.container-about h2,
+.container-about h1 {
+
+    margin-left: 12px;
+    margin-right: 12px;
+    
+}
+
+.heading-text {
+    color: $text-primary-color;
+    font-size: 32px;
+}
+    
+
+h2 {
+    font-size: 18.72px;
+}
+
+p {
+    font-size: 16 px;
+}
+
+.popcorn-image {
+    display: none;
+    
+}
+
+@media (min-width: 48rem){
+    
+    .about-image {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .popcorn-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        float: bottom;
+        
+
+    }
+
+
+
+
+
+}
+
+
 
