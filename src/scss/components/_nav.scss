@@ -1,36 +1,83 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
+// ======== nav layout ======== //
 .main-nav {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 3rem;
-  background-color: black;
-
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  background-color: black;
 }
 
-.btn-menu {
-  @include normalize-object;
-  font-size: 1.5rem;
-  color: white;
+.main-nav .btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.main-nav .logo-main {
+  display: none;
+}
+
+@media (min-width: $tablet) {
+  .main-nav {
+    z-index: 100;
+    top: 0;
+    padding-left: 1rem;
+    max-width: $max-width;
+  }
+
+  .main-nav .logo-main {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    margin-right: 2rem;
+    img {
+      height: auto;
+    }
+  }
+
+  .main-nav .btn-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// ======== search-bar ======== //
+.search-bar {
+  margin-left: 0.5rem;
+}
+
+.search-bar form {
+  display: flex;
+  justify-content: center;
 }
 
 .search-bar i {
   margin-right: 0.5rem;
+  font-size: 1.2rem;
 }
 .search-bar input {
   @include normalize-object;
   border-bottom: 2px solid white;
   outline: none;
-  font-size: 1rem;
-  color: white;
 }
 
 .search-bar input::placeholder {
   color: white;
+}
+
+// ======== btn-menu ======== //
+
+.btn-menu {
+  @include normalize-object;
+  display: flex;
+}
+
+i:last-child {
+  font-size: 1.5rem;
 }

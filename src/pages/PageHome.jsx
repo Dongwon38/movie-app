@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import List from "../components/List";
+import HeroSection from "../components/HeroSection";
 
 function PageHome() {
   const [category, setCategory] = useState("popular");
@@ -51,6 +52,7 @@ function PageHome() {
           ))}
         </nav>
       </div>
+      <HeroSection />
       <List category={category} page={page} setPage={setPage} />
     </main>
   );

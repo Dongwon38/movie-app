@@ -1,19 +1,36 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
+// ======== section-list layout ======== //
 .section-list {
-  margin-bottom: 3rem;
+  margin-bottom: 8rem;
 }
 
+@media (min-width: $tablet) {
+  .section-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: $desktop) {
+  .section-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// ======== movie-item ======== //
 .movie-item {
   margin: 1rem;
   // background: white;
   padding: 0.5rem 0.25rem 1rem;
-  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 35%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
-}
-
-.movie-item img {
-
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(142, 42, 42, 1) 35%,
+    rgba(142, 42, 42, 1) 40%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 .list-links {
