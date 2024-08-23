@@ -887,6 +887,22 @@ body {
 .logo-main {
   margin: 1rem 3.5rem;
 }
+.logo-main img {
+  max-width: 20rem;
+  width: 100%;
+}
+
+.footer-container {
+  background-color: rgb(135, 20, 20);
+  display: flex;
+  justify-content: center;
+}
+.footer-container .footer-logo {
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  max-width: 20rem;
+}
 
 .main-nav {
   position: fixed;
@@ -958,7 +974,7 @@ body {
 }
 
 .section-list {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .movie-item {
