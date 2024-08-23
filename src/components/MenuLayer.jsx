@@ -17,7 +17,11 @@ function MenuLayer() {
 
   return (
     <div
-      className={menuState === true ? "toggle-on" : "toggle-off"}
+      className={
+        menuState === true
+          ? "menu-layer-container toggle-on"
+          : "menu-layer-container toggle-off"
+      }
       onClick={handleClick}
       id="background-area"
     >

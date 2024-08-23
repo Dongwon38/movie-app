@@ -3,7 +3,7 @@
 
 // ======== section-list layout ======== //
 .section-list {
-  margin-bottom: 6rem;
+  margin: 0 1rem 6rem 1rem;
 }
 
 @media (min-width: $tablet) {
@@ -22,9 +22,15 @@
   }
 }
 
+@media (min-width: $desktop-wide) {
+  .list-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 // ======== movie-item ======== //
 .movie-item {
-  margin: 1rem;
+  margin: 0rem;
   // background: white;
   padding: 0.5rem 0.25rem 1rem;
   // background: radial-gradient(

@@ -1,12 +1,13 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-.toggle-on,
-.toggle-off {
+.menu-layer-container {
   width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.575);
   transition: opacity 0.5s, visibility 0.5s;
 }
@@ -33,4 +34,20 @@
 
 .menu-layer li {
   margin: 1rem 0;
+}
+
+@media (min-width: $tablet) {
+  .menu-layer-container {
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+  }
+  .menu-layer {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    max-width: $max-width;
+    padding-top: 2.5rem;
+  }
 }

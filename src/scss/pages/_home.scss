@@ -3,6 +3,8 @@
 
 body {
   background-color: $bg-primary-color;
+  display: flex;
+  justify-content: center;
 }
 
 // ======== main layout ======== //
@@ -27,7 +29,7 @@ body {
 // ======== sub-nav category ======== //
 .sub-nav-container {
   position: fixed;
-  z-index: 100;
+  z-index: 99;
   bottom: 2.4rem;
   height: 2.5rem;
   width: 100%;

@@ -27,8 +27,8 @@
 @media (min-width: $tablet) {
   .main-nav {
     top: 0;
+    margin: 0 auto;
     padding-left: 1rem;
-    max-width: $max-width;
   }
 
   .main-nav .logo-main {
