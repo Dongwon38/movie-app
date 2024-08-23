@@ -966,6 +966,7 @@ body {
   padding: 0.1rem 0.25rem 1rem;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgb(142, 42, 42) 35%, rgb(142, 42, 42) 40%, rgb(0, 0, 0) 100%);
   max-width: 18.75rem;
+  box-shadow: 2px 3px 15px black;
 }
 
 .movie-item img {
@@ -982,6 +983,7 @@ body {
   background-color: white;
   border-radius: 1rem;
   padding: 0.5rem 1.5rem;
+  box-shadow: 2px 3px 15px black;
 }
 .list-links .favPin {
   box-shadow: none;

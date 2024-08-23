@@ -11,6 +11,7 @@
   padding: 0.1rem 0.25rem 1rem;
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 35%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
   max-width: 18.75rem;
+  box-shadow: 2px 3px 15px black;
 }
 
 .movie-item img {
@@ -28,6 +29,7 @@
     background-color: white;
     border-radius: 1rem;
     padding: 0.5rem 1.5rem;
+    box-shadow: 2px 3px 15px black;
   }
 
   .favPin {
