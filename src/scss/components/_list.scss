@@ -23,11 +23,11 @@
   // margin: 0.5rem;
   padding: 1rem;
 
-  a {
+  p {
     color: black;
     background-color: white;
-    border-radius: 20%;
-    padding: 0 1.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem;
   }
 
   .favPin {
@@ -36,7 +36,6 @@
 
   .btn-like {
     background: none;
-    box-shadow: none;
     border: 0;
   }
 }

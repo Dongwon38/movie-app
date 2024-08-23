@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import FavButton from "./FavButton";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
-import MoreInfo from "./MoreInfo";
 
 function List({ category, page, setPage }) {
   // list to store data from API
@@ -51,13 +50,15 @@ function List({ category, page, setPage }) {
       {movieList.map((movie) => {
         return (
           <article key={movie.id} className="movie-item">
+            <Link to={`/detail/${movie.id}`}>
             <img
               src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
               alt={movie.title}
               />
+            </Link>
             <div className="list-links">
               <Link to={`/detail/${movie.id}`}>
-                <MoreInfo/>
+                <p>More Info</p>
               </Link>
               <FavButton movieId={movie.id} />
             </div>

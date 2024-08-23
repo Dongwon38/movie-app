@@ -977,18 +977,17 @@ body {
   justify-content: space-evenly;
   padding: 1rem;
 }
-.list-links a {
+.list-links p {
   color: black;
   background-color: white;
-  border-radius: 20%;
-  padding: 0 1.5rem;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
 }
 .list-links .favPin {
   box-shadow: none;
 }
 .list-links .btn-like {
   background: none;
-  box-shadow: none;
   border: 0;
 }
 
