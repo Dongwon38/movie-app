@@ -17,19 +17,22 @@ body {
 }
 
 .sub-nav-container {
-  position: fixed;
+  // position: fixed;
   bottom: 3rem;
   width: 100%;
-  background-color: grey;
+  background: linear-gradient(0deg, #333333 0%, rgba(142,42,42,1) 50%, #333333);
+
+  // background-color: grey;
 }
 
 .category-nav {
   display: flex;
   padding: 0.5rem;
   overflow: scroll;
-  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
-  height: 3.5rem;
+  justify-content: space-around;
   // white-space: nowrap;
+  margin: 0 auto;
+  width: 10rem;
 }
 
 // horizontal-scroll & hide bar
@@ -46,7 +49,10 @@ body {
   border: none;
   background-color: transparent;
   padding: 4px 0.5rem;
-  margin: 0 2px;
+  // margin: 0 2px;
+
+  font-size: 1.5rem;
+  margin: 0 1rem;
 }
 
 .btn-category.active {
