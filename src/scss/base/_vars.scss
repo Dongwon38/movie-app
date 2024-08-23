@@ -16,8 +16,19 @@ $text-primary-color: white;
 $text-secondary-color: black;
 
 // font-family
-$primary-font: monospace;
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+$primary-font: "Inter";
 $secondary-font: monospace;
 
 //boxshadow color for images
 $box-shadow-color-black: black;
+
+
+// Breakpoints
+$mobile: 20em; // 320px
+$tablet: 31.25em; // 500px
+$desktop: 50em; // 800px
+$max-width: 125em; // 2000px
+
+// comment for dividing
+// ======== main layout ======== //

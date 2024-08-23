@@ -1,7 +1,7 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-.page-nav {
+.page-btn-container {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
@@ -12,16 +12,35 @@
 .page-nav button {
   color: white;
   padding: 0.5rem;
+
+  gap: 0.2rem;
+}
+
+@media (min-width: $tablet) {
+  .page-btn-container {
+    grid-column: span 2;
+  }
+}
+@media (min-width: $desktop) {
+  .page-btn-container {
+    grid-column: span 4;
+  }
+}
+
+.page-btn-container p,
+.page-btn-container button {
+  color: rgb(173, 173, 173);
+  padding: 0.5rem 1rem;
   margin: 0;
 }
 
-.page-nav button {
+.page-btn-container button {
   background-color: transparent;
   border: none;
 }
 
-.page-nav button.active {
-  background-color: $primary-color; /* 원하는 하이라이트 색상 */
+.page-btn-container button.active {
+  text-decoration: underline;
   color: white;
   font-weight: bold;
 }

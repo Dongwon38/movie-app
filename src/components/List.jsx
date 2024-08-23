@@ -10,10 +10,12 @@ import { Link } from "react-router-dom";
 import FavButton from "./FavButton";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
+import HeroSection from "./HeroSection";
 
 function List({ category, page, setPage }) {
   // list to store data from API
   const [movieList, setMovieList] = useState([]);
+  // to store total pages from the results
   const [totalPages, setTotalPages] = useState(null);
 
   // get GlobalContext
@@ -36,10 +38,12 @@ function List({ category, page, setPage }) {
         },
       });
       const data = await response.json();
+      console.log(data);
+
+      // set data
       setMovieList(data.results);
       setTotalPages(data.total_pages);
       countMovies(data.total_results);
-      console.log(data);
     };
     getDataFromApi();
     // check change on "page" and "category"

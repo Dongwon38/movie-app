@@ -1,0 +1,83 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+.section-hero {
+  width: 100%;
+  max-width: $max-width;
+  position: relative;
+  background-color: green;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
+}
+
+// ======== poster-container - bg Image ======== //
+.hero-bg-mobile {
+  display: block;
+}
+.hero-bg-desktop {
+  display: none;
+}
+
+@media (min-width: $tablet) {
+  .hero-bg-mobile {
+    display: none;
+  }
+  .hero-bg-desktop {
+    display: block;
+  }
+  .poster-container {
+    max-height: 50rem;
+    max-width: $max-width;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}
+
+// ======== info-container ======== //
+.info-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 0.5fr 1fr;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 80%);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0.5rem;
+}
+
+.btn-container button {
+  color: white;
+  font-size: 2rem;
+}
+
+.hero-info {
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  h3,
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.hero-overview {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media (min-width: $tablet) {
+  .hero-overview {
+    max-width: 20rem;
+  }
+}
