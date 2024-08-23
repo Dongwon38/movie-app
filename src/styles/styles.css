@@ -977,6 +977,12 @@ body {
   margin-bottom: 3rem;
 }
 
+@media (min-width: 43.75em) {
+  .section-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 .movie-item {
   margin: 0 auto;
   margin-top: 1rem;

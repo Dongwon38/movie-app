@@ -46,7 +46,8 @@ function List({ category, page, setPage }) {
   }, [page, category, searchText]);
 
   return (
-    <section className="section-list">
+    <section>
+      <div className="section-list">
       {movieList.map((movie) => {
         return (
           <article key={movie.id} className="movie-item">
@@ -65,6 +66,7 @@ function List({ category, page, setPage }) {
           </article>
         );
       })}
+      </div>
       <PageButton page={page} changePage={setPage} totalPages={totalPages} />
     </section>
   );
