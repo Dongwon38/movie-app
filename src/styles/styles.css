@@ -961,9 +961,15 @@ body {
 }
 
 .movie-item {
-  margin: 1rem;
-  padding: 0.5rem 0.25rem 1rem;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0.1rem 0.25rem 1rem;
   background: radial-gradient(circle, rgb(2, 0, 36) 0%, rgb(142, 42, 42) 35%, rgb(142, 42, 42) 40%, rgb(0, 0, 0) 100%);
+  max-width: 18.75rem;
+}
+
+.movie-item img {
+  box-shadow: 2px 3px 15px black;
 }
 
 .list-links {
@@ -976,6 +982,14 @@ body {
   background-color: white;
   border-radius: 20%;
   padding: 0 1.5rem;
+}
+.list-links .favPin {
+  box-shadow: none;
+}
+.list-links .btn-like {
+  background: none;
+  box-shadow: none;
+  border: 0;
 }
 
 .page-nav {
