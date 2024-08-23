@@ -9,6 +9,7 @@ body {
     width: 100%;
     height: auto;
     display: block;
+    border-bottom: ;
 
 }
 
@@ -18,6 +19,7 @@ body {
 
     margin-left: 12px;
     margin-right: 12px;
+
     
 }
 
@@ -48,15 +50,36 @@ p {
         display: block;
     }
 
+    .container-about {
+        position: absolute;
+        top: 0;
+        max-width: 400px;
+        background-color: grey;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        border: 2px solid black;
+        
+    }
+
     .popcorn-image {
         display: block;
         width: 100%;
         height: auto;
         float: bottom;
+        filter: brightness(50%);
+        position: relative;
         
-
     }
 
+    .about-mobile {
+        display: block;
+    }
+}
+   @media (min-width: 50rem){
+ 
+.popcorn-image{
+    display: none;
+}
 
 
 
