@@ -26,15 +26,11 @@ body {
 
 // ======== sub-nav category ======== //
 .sub-nav-container {
-  position: fixed;
-  z-index: 100;
-  bottom: 2.4rem;
-  height: 2.5rem;
+  bottom: 3rem;
   width: 100%;
-  max-width: $max-width;
-  box-shadow: 2px 3px 15px ($box-shadow-color-black);
-  font-size: 14px;
-}
+  background: linear-gradient(0deg, #333333 0%, rgba(142,42,42,1) 50%, #333333);
+
+
 
 @media (min-width: $tablet) {
   .sub-nav-container {
@@ -47,14 +43,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
   height: 100%;
   overflow: scroll;
-  background-color: rgb(131, 11, 11);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(2, 0, 36, 1) 0%,
-  //   rgba(142, 42, 42, 1) 40%,
-  //   rgba(0, 0, 0, 1) 100%
-  // );
-  // white-space: nowrap;
+  margin: 0 auto;
+  width: 10rem;
 }
 
 .category-nav button {
@@ -76,4 +66,20 @@ body {
 // horizontal-scroll & hide bar for firefox
 .category-nav {
   scrollbar-width: none;
+}
+
+.category-nav button {
+  color: white;
+  border: none;
+  background-color: transparent;
+  padding: 4px 0.5rem;
+  // margin: 0 2px;
+
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+.btn-category.active {
+  border-bottom: 4px solid $primary-color;
+  font-weight: bold;
 }
