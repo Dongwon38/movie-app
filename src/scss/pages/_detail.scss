@@ -119,13 +119,13 @@ body {
     padding-left: 0;
     height: 13rem;
     .cast-member-name{
-      margin-top: 0;
+      margin-top: 0.3rem;
     }
     li{
-      background-color: $bg-secondary-color;
+      // background-color: $bg-secondary-color;
       border-radius: 10px;
       p{
-        margin-top: 0.3rem;
+        margin-top: 0.7rem;
         margin-left: 0.2rem;
       }
     }
@@ -139,7 +139,7 @@ body {
     li:nth-child(2n) {
       background-color: $bg-secondary-color;
       height: 13rem;
-      width: 4.89rem;
+      // width: 4.89rem;
       border-radius: 10px;
       p {
         margin-top: 0.3rem;
@@ -228,7 +228,7 @@ body {
         }
       }
       li:nth-child(2n) {
-        width: 6.5rem;
+        // width: 6.5rem;
         height: 15rem;
       }
     }
@@ -347,7 +347,6 @@ body {
         }
       }
       li:nth-child(2n) {
-        width: 8rem;
         height: 21rem;
       }
     }
