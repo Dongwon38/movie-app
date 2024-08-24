@@ -611,6 +611,16 @@ body {
   width: 10rem;
 }
 
+@media (min-width: 43.75em) {
+  .category-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 54.375rem;
+  }
+}
 .category-nav button {
   background-color: transparent;
   border: none;
@@ -1093,15 +1103,6 @@ i:last-child {
     justify-content: space-around;
   }
 }
-@media (min-width: 62.5em) {
-  .section-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .section-list .movie-item {
-    margin: 0.5rem;
-  }
-}
 .movie-item {
   margin: 0 auto;
   margin-top: 1rem;
@@ -1131,6 +1132,21 @@ i:last-child {
   border: 0;
 }
 
+@media (min-width: 62.5em) {
+  .section-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .section-list .movie-item {
+    margin: 0.5rem;
+  }
+  .list-links {
+    display: none;
+  }
+  .movie-item {
+    padding: 0.25rem;
+  }
+}
 .section-hero {
   width: 100%;
   max-width: 125em;

@@ -64,6 +64,17 @@ body {
   width: 10rem;
 }
 
+@media (min-width: $tablet) {
+  .category-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 54.375rem;
+  }
+}
+
 .category-nav button {
   @include normalize-object;
   color: white;
