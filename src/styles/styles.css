@@ -578,9 +578,24 @@ body {
 }
 
 .sub-nav-container {
+  position: relative;
   bottom: 3rem;
   width: 100%;
   background: linear-gradient(0deg, #333333 0%, rgb(142, 42, 42) 50%, #333333);
+  height: 5rem;
+}
+.sub-nav-container .nav-arrow-left,
+.sub-nav-container .nav-arrow-right {
+  position: absolute;
+  height: 5rem;
+  top: 0;
+  bottom: 0;
+}
+.sub-nav-container .nav-arrow-left {
+  left: 1rem;
+}
+.sub-nav-container .nav-arrow-right {
+  right: 1rem;
 }
 
 @media (min-width: 43.75em) {

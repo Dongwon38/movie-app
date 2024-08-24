@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import List from "../components/List";
 import HeroSection from "../components/HeroSection";
+import arrowLeft from "../../public/assets/images/icons/arrow-left.svg";
+import arrowRight from "../../public/assets/images/icons/arrow-right.svg";
 
 function PageHome() {
   const [category, setCategory] = useState("popular");
@@ -38,6 +40,12 @@ function PageHome() {
       <HeroSection />
 
       <div className="sub-nav-container">
+        <img  className="nav-arrow-left"
+              src={arrowLeft} 
+              alt="left-arrow" />
+        <img  className="nav-arrow-right"
+              src={arrowRight}
+              alt="right-arrow" />
         <nav className="category-nav">
           {categories.map((cat, index) => (
             <button
