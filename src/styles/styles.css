@@ -1132,6 +1132,10 @@ i:last-child {
   border: 0;
 }
 
+.overlay {
+  display: none;
+}
+
 @media (min-width: 62.5em) {
   .section-list {
     display: grid;
