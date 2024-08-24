@@ -55,7 +55,7 @@ body {
 }
 
 .btn-category.active {
-  background-color: red;
+  border-bottom: 4px solid $primary-color;
   font-weight: bold;
 }
 
@@ -77,9 +77,4 @@ body {
 
   font-size: 1.5rem;
   margin: 0 1rem;
-}
-
-.btn-category.active {
-  border-bottom: 4px solid $primary-color;
-  font-weight: bold;
 }
