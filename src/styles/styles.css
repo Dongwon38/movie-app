@@ -1093,8 +1093,9 @@ i:last-child {
 }
 
 .section-hero {
-  width: 100%;
+  width: 100vw;
   max-width: 125em;
+  grid-template-rows: 2fr 1fr;
   position: relative;
   background-color: green;
   box-shadow: 2px 3px 15px black;
@@ -1116,10 +1117,12 @@ i:last-child {
     display: block;
   }
   .poster-container {
-    max-height: 50rem;
-    max-width: 125em;
+    max-height: 100vh;
     overflow: hidden;
     margin: 0 auto;
+  }
+  .poster-container img {
+    width: 100vw;
   }
 }
 .info-container {
