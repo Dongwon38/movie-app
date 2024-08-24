@@ -2,15 +2,14 @@
 @use "../base/mixins" as *;
 
 body {
-    background-color: $bq-dark-grey;
+    background-color: $bg-dark-grey;
 }
 
 .about-image {
     width: 100%;
     height: auto;
     display: block;
-    border-bottom: ;
-
+    
 }
 
 .container-about p,
@@ -20,14 +19,12 @@ body {
     margin-left: 12px;
     margin-right: 12px;
 
-    
 }
 
 .heading-text {
     color: $text-primary-color;
     font-size: 32px;
 }
-    
 
 h2 {
     font-size: 18.72px;
@@ -46,43 +43,40 @@ p {
     
     .about-image {
         width: 100%;
-        height: auto;
+        // height: auto;
+        height: 100vh;
         display: block;
+        object-fit: cover;
     }
+
 
     .container-about {
         position: absolute;
         top: 0;
         max-width: 400px;
-        background-color: grey;
+        // background-color: grey;
         margin-left: 1rem;
-        margin-top: 1rem;
-        border: 2px solid black;
+        margin-top: 3rem;
+        // border: 2px solid black;
         
     }
 
-    .popcorn-image {
-        display: block;
-        width: 100%;
-        height: auto;
-        float: bottom;
-        filter: brightness(50%);
-        position: relative;
+    // .popcorn-image {
+    //     display: block;
+    //     width: 100%;
+    //     height: auto;
+    //     float: bottom;
+    //     // filter: brightness(50%);
+    //     position: relative;
         
-    }
+    // }
 
     .about-mobile {
         display: block;
     }
 }
-   @media (min-width: 50rem){
+   @media (min-width: 50em){
  
-.popcorn-image{
-    display: none;
-}
-
-
-
 
 }
 

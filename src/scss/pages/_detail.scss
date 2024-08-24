@@ -4,7 +4,7 @@
 //setting backdrop to display none until tabled mode
 
 body {
-  background-color: $bq-dark-grey;
+  background-color: $bg-dark-grey;
 }
 .main-detail {
   h1 {
@@ -46,7 +46,7 @@ body {
   gap: 6rem;
 
   .movie-title {
-    font-size: 1rem;
+    font-size: 32px;
   }
   .btn-like {
     height: 1.2rem;
@@ -286,8 +286,8 @@ body {
   .container-grid {
     grid-template-columns: 1fr 60rem 1fr;
     //header
-    h3 {
-      font-size: 2rem;
+    h2 {
+      font-size: 18.72;
     }
     font-size: 1rem;
     .container-scroll {
@@ -314,3 +314,4 @@ body {
     }
   }
 }
+

@@ -11,9 +11,7 @@ function PageAbout() {
 <img className = "about-image" src={background} alt="Background" />
 
 
-
-
-<section className="popcorn-image">
+{/* <section className="popcorn-image"> */}
   <div className="container-about">
       <h1 className="about-title">Welcome to MOVIEPIN</h1>
       <p>Hey there, welcome to MOVIEPIN! We're excited to help you discover movies that match your unique tastes.</p>
@@ -24,8 +22,8 @@ function PageAbout() {
       <h2>Enjoy your movie journey with MOVIEPIN!</h2>
   </div>
 
-      <img className = "popcorn" src={popcorn} alt="Popcorn Background" />
-</section>
+      {/* <img className = "popcorn" src={popcorn} alt="Popcorn Background" />
+</section> */}
 
 </main>
   );
