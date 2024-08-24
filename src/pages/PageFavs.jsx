@@ -48,7 +48,7 @@ function PageFavs() {
   return (
     <main className="main-favs">
       <img className="background-fav" src={Images} alt="Bakcground Image" />
-      <h1>Favourites</h1>
+      <h1>Favourites:</h1>
       <div className="container-center">
       <div className="container-scroll-2">
         <ul className="cast-list-2">
