@@ -9,6 +9,8 @@ header {
   justify-content: center;
   align-items: center;
   box-shadow: 2px 3px 15px ($box-shadow-color-black);
+  background-color: black;
+  padding: 2.5rem 0;
 }
 
 .logo-main {
@@ -18,6 +20,7 @@ header {
     max-width: 20rem;
     width: 100%;
   }
+}
 
 @media (min-width: $tablet) {
   header {

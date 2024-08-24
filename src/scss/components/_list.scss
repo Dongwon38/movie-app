@@ -9,20 +9,23 @@
 
 .movie-item img {
   box-shadow: 2px 3px 15px black;
-
+}
 @media (min-width: $tablet) {
   .section-list {
     margin-bottom: 3rem;
-  }
-  .list-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 }
 
 @media (min-width: $desktop) {
-  .list-container {
+  .section-list {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    .movie-item {
+      margin: 0.5rem;
+    }
   }
 }
 
