@@ -10,11 +10,12 @@ import { Link } from "react-router-dom";
 import FavButton from "./FavButton";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
-import MoreInfo from "./MoreInfo";
+import HeroSection from "./HeroSection";
 
 function List({ category, page, setPage }) {
   // list to store data from API
   const [movieList, setMovieList] = useState([]);
+  // to store total pages from the results
   const [totalPages, setTotalPages] = useState(null);
 
   // get GlobalContext
@@ -37,33 +38,39 @@ function List({ category, page, setPage }) {
         },
       });
       const data = await response.json();
+      console.log(data);
+
+      // set data
       setMovieList(data.results);
       setTotalPages(data.total_pages);
       countMovies(data.total_results);
-      console.log(data);
     };
     getDataFromApi();
     // check change on "page" and "category"
   }, [page, category, searchText]);
 
   return (
-    <section className="section-list">
+    <section>
+      <div className="section-list">
       {movieList.map((movie) => {
         return (
           <article key={movie.id} className="movie-item">
+            <Link to={`/detail/${movie.id}`}>
             <img
               src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
               alt={movie.title}
               />
+            </Link>
             <div className="list-links">
               <Link to={`/detail/${movie.id}`}>
-                <MoreInfo/>
+                <p>More Info</p>
               </Link>
               <FavButton movieId={movie.id} />
             </div>
           </article>
         );
       })}
+      </div>
       <PageButton page={page} changePage={setPage} totalPages={totalPages} />
     </section>
   );

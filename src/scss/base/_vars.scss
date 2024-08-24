@@ -24,5 +24,16 @@ $secondary-font: monospace;
 //boxshadow color for images
 $box-shadow-color-black: black;
 
+
 //color for background block favourites 
 $background-favourites: rgb(61, 61, 61);
+
+// Breakpoints
+$mobile: 20em; // 320px
+$tablet: 31.25em; // 500px
+$desktop: 50em; // 800px
+$max-width: 125em; // 2000px
+
+// comment for dividing
+// ======== main layout ======== //
+

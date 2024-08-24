@@ -2,33 +2,67 @@
 @use "../base/mixins" as *;
 
 
+.section-list {
+  margin-bottom: 6rem;
+}
 
-//commentid out from Ezequiel for styling
-// .section-list {
-//   margin-bottom: 3rem;
-// }
+.movie-item img {
+  box-shadow: 2px 3px 15px black;
+}
 
-// .movie-item {
-//   margin: 1rem;
-//   // background: white;
-//   padding: 0.5rem 0.25rem 1rem;
-//   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(142,42,42,1) 35%, rgba(142,42,42,1) 40%, rgba(0,0,0,1) 100%);
-// }
+@media (min-width: $tablet) {
+  .section-list {
+    margin-bottom: 3rem;
+  }
+  .list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-// .movie-item img {
+@media (min-width: $desktop) {
+  .list-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-// }
+// ======== movie-item ======== //
+.movie-item {
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0.1rem 0.25rem 1rem;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(142, 42, 42, 1) 35%,
+    rgba(142, 42, 42, 1) 40%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  max-width: 18.75rem;
+  box-shadow: 2px 3px 15px black;
+}
 
-// .list-links {
-//   display: flex;
-//   justify-content: space-evenly;
-//   // margin: 0.5rem;
-//   padding: 1rem;
+.list-links {
+  display: flex;
+  justify-content: space-evenly;
+  // margin: 0.5rem;
+  padding: 1rem;
 
-//   a {
-//     color: black;
-//     background-color: white;
-//     border-radius: 20%;
-//     padding: 0 1.5rem;
-//   }
-// }
+  p {
+    color: black;
+    background-color: white;
+    border-radius: 1rem;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 2px 3px 15px black;
+  }
+
+  .favPin {
+    box-shadow: none;
+  }
+
+  .btn-like {
+    background: none;
+    border: 0;
+  }
+}
+
