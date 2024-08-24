@@ -42,11 +42,12 @@
       padding-top: 2rem;
     }
    
-    .cast-member-2:first-child{
-      margin-left: 1rem;
-    }
   }
 
+}
+
+.movie-title{
+  margin-top: 0.5rem;
 }
 
 //hover state
@@ -70,7 +71,7 @@
 
 //width of container has to be adjusted accurding to width in conatiner-scroll-2
 .container-center{
- width: 45rem;
+ width: 60rem;
  margin: 0 auto;
 }
 .container-scroll-2{
@@ -79,18 +80,27 @@
   padding: 0.5rem;
   overflow: scroll;
   overflow-x: scroll;
-  width: 45rem;
+  width: 60rem;
   margin: 0;
   padding: 0;
+  border-radius: 1rem;
   //this looks good
   box-shadow: 10px 5px 10px ($box-shadow-color-black);
   background-color: $bg-secondary-colo-fav;
   .cast-list-2{
     padding-left: none;
     display: flex;
-    gap: 3rem;
+    align-items: center;
+    gap: 4rem;
     padding-left: 0;
-    height: 25rem;
+    height: 35rem;
+    border-radius: 1rem;
+    li:first-child{
+      margin-left: 1rem;
+    }
+    li:last-child{
+      margin-right: 1rem;
+    }
     img{
       box-shadow: 1px 2px 5px($box-shadow-color-black) ;
       border-radius: 8px;
@@ -111,6 +121,8 @@
       width: 12rem;
       overflow-wrap: break-word;
       word-wrap: break-word;
+      height: 25rem;
+    
     }
    
     

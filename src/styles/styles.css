@@ -911,8 +911,9 @@ body {
   margin: 0 auto;
   padding-top: 2rem;
 }
-.container-scroll-2 .cast-list-2 .cast-member-2:first-child {
-  margin-left: 1rem;
+
+.movie-title {
+  margin-top: 0.5rem;
 }
 
 .container-hover {
@@ -927,7 +928,7 @@ body {
 
 @media (min-width: 48rem) {
   .container-center {
-    width: 45rem;
+    width: 60rem;
     margin: 0 auto;
   }
   .container-scroll-2 {
@@ -935,18 +936,27 @@ body {
     padding: 0.5rem;
     overflow: scroll;
     overflow-x: scroll;
-    width: 45rem;
+    width: 60rem;
     margin: 0;
     padding: 0;
+    border-radius: 1rem;
     box-shadow: 10px 5px 10px black;
     background-color: #d07777;
   }
   .container-scroll-2 .cast-list-2 {
     padding-left: none;
     display: flex;
-    gap: 3rem;
+    align-items: center;
+    gap: 4rem;
     padding-left: 0;
-    height: 25rem;
+    height: 35rem;
+    border-radius: 1rem;
+  }
+  .container-scroll-2 .cast-list-2 li:first-child {
+    margin-left: 1rem;
+  }
+  .container-scroll-2 .cast-list-2 li:last-child {
+    margin-right: 1rem;
   }
   .container-scroll-2 .cast-list-2 img {
     box-shadow: 1px 2px 5px black;
@@ -956,6 +966,7 @@ body {
     width: 12rem;
     overflow-wrap: break-word;
     word-wrap: break-word;
+    height: 25rem;
   }
   .cast-member-photo-2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);

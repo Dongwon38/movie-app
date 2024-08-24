@@ -60,6 +60,7 @@ function PageFavs() {
                       src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
                       alt={movie.title}
                       />
+                        <h2 className="movie-title">{movie.title}</h2>
                 </Link>
                 <div className="container-hover">
                 <h2>{movie.title}</h2>
