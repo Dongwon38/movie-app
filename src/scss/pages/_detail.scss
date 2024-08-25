@@ -4,7 +4,7 @@
 //setting backdrop to display none until tabled mode
 
 body {
-  background-color: $bq-dark-grey;
+  background-color: $bg-dark-grey;
 }
 .main-detail {
   h1 {
@@ -14,6 +14,7 @@ body {
   .img-poster {
     display: block;
     margin: 0 auto;
+    margin-top: 4rem;
     width: 18.5rem;
     text-align: center;
     box-shadow: 2px 3px 15px ($box-shadow-color-black);
@@ -43,14 +44,17 @@ body {
   justify-content: space-around;
   margin-top: 1rem;
   overflow-wrap: break-word;
-  gap: 6rem;
+  gap: 5rem;
 
   .movie-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
   .btn-like {
-    height: 1.2rem;
-    font-size: 0.5rem;
+    // height: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+    background-color: $secondary-color;
+    border-radius: 0.5rem;
   }
 }
 
@@ -113,7 +117,19 @@ body {
     display: flex;
     gap: 1.5rem;
     padding-left: 0;
-    height: 12rem;
+    height: 13rem;
+    .cast-member-name{
+      margin-top: 0.3rem;
+    }
+    li{
+      // background-color: $bg-secondary-color;
+      border-radius: 10px;
+      p{
+        margin-top: 0.7rem;
+        margin-left: 0.2rem;
+      }
+    }
+
     img {
       box-shadow: 1px 2px 5px ($box-shadow-color-black);
       border-radius: 8px;
@@ -122,9 +138,9 @@ body {
     //styles for every second child in ul
     li:nth-child(2n) {
       background-color: $bg-secondary-color;
-      height: 11rem;
-      width: 4.89rem;
-      border-radius: 8px;
+      height: 13rem;
+      // width: 4.89rem;
+      border-radius: 10px;
       p {
         margin-top: 0.3rem;
         margin-left: 0.2rem;
@@ -156,6 +172,8 @@ body {
 //start of the mix width 768px tablet mode
 
 @media (min-width: 48rem) {
+
+
   .main-detail {
     .img-poster {
       width: 25.5rem;
@@ -169,9 +187,9 @@ body {
       font-size: 3rem;
     }
     .btn-like {
-      width: 4rem;
+      width: 5.8rem;
       height: 2rem;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
     }
     .container-year-genre {
       padding-left: 3.5rem;
@@ -210,7 +228,7 @@ body {
         }
       }
       li:nth-child(2n) {
-        width: 6.5rem;
+        // width: 6.5rem;
         height: 15rem;
       }
     }
@@ -223,14 +241,15 @@ body {
   .main-detail {
     .img-poster {
       width: 40rem;
+      margin: 0;
     }
   }
 
   .container-desktop {
+    margin-top: 5.5rem;
     display: grid;
     grid-template-columns: 7rem 40rem 1fr 7rem;
-    grid-template-rows: 13rem 23rem 1fr;
-
+    grid-template-rows: 16rem 17rem 1fr;
     .img-poster {
       grid-column: 2/2;
       grid-row: 1/4;
@@ -244,6 +263,7 @@ body {
       grid-row: 3/3;
     }
     .container-grid-top {
+      margin: 0;
       grid-column: 3/3;
       grid-row: 1/1;
     }
@@ -273,11 +293,23 @@ body {
       }
     }
   }
+  //fixing padding on movierating and movie overview
+  .movie-rating{
+    padding: 0;
+  }
+
   //container rating info second box
   .container-rating-info {
     grid-template-columns: 1fr 60rem 1fr;
     font-size: 2rem;
+    .movie-rating{
+      margin-left: 0;
+    }
+    .movie-overview{
+      margin-left: 0;
+    }
     p {
+      padding-left: 0;
       line-height: 2.5rem;
     }
   }
@@ -286,31 +318,38 @@ body {
   .container-grid {
     grid-template-columns: 1fr 60rem 1fr;
     //header
-    h3 {
-      font-size: 2rem;
+    h2 {
+      font-size: 18.72;
     }
     font-size: 1rem;
     .container-scroll {
       width: 59rem;
-      height: 22rem;
+      height: 23rem;
     }
     .cast-list {
-      height: 22rem;
+      height: 24rem;
       gap: 3rem;
+     
       .cast-member-name {
         font-size: 1.5rem;
+        margin-top: 0.3rem;
+        margin-left: 0.2rem;
       }
       .cast-member {
-        height: 14rem;
+        height: 21rem;
         width: 9rem;
+        
+        margin-top: 0.3rem;
+        margin-left: 0.2rem;
+      
         img {
           width: 15rem;
         }
       }
       li:nth-child(2n) {
-        width: 8rem;
         height: 21rem;
       }
     }
   }
 }
+

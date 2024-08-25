@@ -1,2 +1,21 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
+
+.footer-container {
+    background-color: rgb(135, 20, 20);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+
+    .footer-logo {
+        width: 100%;
+        padding: 2rem;
+        max-width: 20rem;
+    }
+}
+
+@media (min-width: $tablet) {
+    .footer-container {
+        margin-bottom: 0;
+    }
+}

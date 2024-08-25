@@ -1,15 +1,20 @@
-$test-color: lightgray;
+// $test-color: lightgray;
 
 // theme-color
-$primary-color: #ff0808;
+$primary-color: #ff0000;
 $secondary-color: white;
 
+// navigation-bar reds
+$background-nav: #830b0b;
+$backgroung-nav-hover: #ff0000;
+
 // background-color
-$bg-primary-color: #121212;
-$bg-secondary-color: #b30000;
+$bg-primary-color: #333333;
+$bg-secondary-color: #ff0000;
+$bg-secondary-colo-fav: #d07777;
 
 //background-color from wireframe
-$bq-dark-grey: #333333;
+$bg-dark-grey: #333333;
 
 // text-color
 $text-primary-color: white;
@@ -25,10 +30,13 @@ $secondary-font: monospace;
 //boxshadow color for images
 $box-shadow-color-black: black;
 
+//color for background block favourites
+$background-favourites: rgb(61, 61, 61);
+
 // Breakpoints
 $mobile: 20em; // 320px
-$tablet: 31.25em; // 500px
-$desktop: 50em; // 800px
+$tablet: 43.75em; // 700px
+$desktop: 62.5em; // 1000px
 $desktop-wide: 80em; // 1280px
 $max-width: 125em; // 2000px
 

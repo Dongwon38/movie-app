@@ -1,8 +1,10 @@
 @use "vars" as *;
 @use "mixins" as *;
 
+
+
 body {
-  background-color: $test-color;
+  background-color: $bg-primary-color;
   font-family: $primary-font;
   color: $text-primary-color;
 }
@@ -14,8 +16,29 @@ h4,
 h5,
 h6,
 p {
+font-family: $primary-font;
+color: $text-primary-color;
+}
+
+p {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 18.72px;
+}
+
+h4 {
+  font-size: 12px;
+  line-height: 1rem;
+  
 }
 
 a {
   color: $text-primary-color;
 }
+
