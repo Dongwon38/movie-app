@@ -65,7 +65,7 @@
   left: 0;
   display: grid;
   grid-template-columns: 5rem 1fr 1fr 5rem;
-  grid-template-rows: 1fr 1fr 12rem 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
   height: 100%;
   border-radius: 1rem;
   a{
@@ -99,7 +99,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 10%;
   }
   .movie-title-hover{
     margin: 0;
@@ -110,6 +110,8 @@
   }
 
   .container-year-genre-hover{
+    padding-top: 1.5rem;
+    border-top:  0.2rem solid $secondary-color;
     margin: 0;
     grid-column: 1/5;
     grid-row: 3/3;
@@ -138,7 +140,7 @@
 //HELLO DONG WONG THE CODE BELLOW IS NOT FINISHED IT IS INCASE THAT I DONT HAVE TO FINISH ADJUSTING THE HOVERSTATE I HAVE LEFT IT OUT
 //starting media wifth for overflow momments
 
-@media (min-width: 31.25rem){
+@media (min-width: 31.25rem) and (max-width: 48.3rem) {
   .movie-item{
     .list-links{
       // grid-template-rows: 1fr 1fr 10rem 1fr; 
@@ -179,25 +181,57 @@
 
 
 //for four colum movie
-@media (min-width: 50rem){
+@media (min-width: 50rem) and (max-width: 73.4rem){
 
-  .list-links{
-    padding: 0.5rem;
-    .container-buttons-hover{
-      gap: 10%;
-    }
+.section-list{
+    .movie-item{
+      .list-links{
+        grid-template-columns: 0.2rem 1fr auto 0.2rem;
+        grid-template-rows: 1fr 1rem 1fr 1fr; 
 
-    .movie-title-hover{
-      font-size: 0.5rem;
-    }
 
-    .container-year-genre-hover{
-      p{
-        font-size: 0.5rem;
+        .container-buttons-hover{
+          padding: 0 1rem;
+          height: 60%;
+          justify-content: flex-start;
+          gap: 10%;
+        }
+      
+        padding: 0rem;
+       
+        .movie-title-hover{
+          padding-top: 2rem;
+          font-size: 1rem;
+        }
+
+        .btn-like{
+          padding: 0.5rem 1rem;
+          font-size: 0.4rem;
+        }
+        a{
+          font-size: 0.5rem;
+          text-align: start;
+          width: 4rem;
+          height: 1.8rem;
+          p{
+            margin-left: 0.7rem;
+            margin-top: 0.2rem;
+          }
+        }
       }
+      .container-year-genre-hover{
+        border-top:  0;
+      margin: 0.9rem;
+        p{
+          font-size: 0.7rem;
+        }
+        border-top:  0.2rem solid $secondary-color;
+      }
+    
     }
-
   }
+
+
 
 
 

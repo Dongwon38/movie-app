@@ -1108,7 +1108,7 @@ i:last-child {
   left: 0;
   display: grid;
   grid-template-columns: 5rem 1fr 1fr 5rem;
-  grid-template-rows: 1fr 1fr 12rem 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   height: 100%;
   border-radius: 1rem;
 }
@@ -1142,7 +1142,7 @@ i:last-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 3rem;
+  gap: 10%;
 }
 .list-links .movie-title-hover {
   margin: 0;
@@ -1151,6 +1151,8 @@ i:last-child {
   font-size: 2rem;
 }
 .list-links .container-year-genre-hover {
+  padding-top: 1.5rem;
+  border-top: 0.2rem solid white;
   margin: 0;
   grid-column: 1/5;
   grid-row: 3/3;
@@ -1172,7 +1174,7 @@ i:last-child {
   visibility: visible;
 }
 
-@media (min-width: 31.25rem) {
+@media (min-width: 31.25rem) and (max-width: 48.3rem) {
   .movie-item .list-links .container-buttons-hover {
     gap: 30%;
   }
@@ -1202,18 +1204,43 @@ i:last-child {
     font-size: 0.8rem;
   }
 }
-@media (min-width: 50rem) {
-  .list-links {
-    padding: 0.5rem;
+@media (min-width: 50rem) and (max-width: 73.4rem) {
+  .section-list .movie-item .list-links {
+    grid-template-columns: 0.2rem 1fr auto 0.2rem;
+    grid-template-rows: 1fr 1rem 1fr 1fr;
+    padding: 0rem;
   }
-  .list-links .container-buttons-hover {
+  .section-list .movie-item .list-links .container-buttons-hover {
+    padding: 0 1rem;
+    height: 60%;
+    justify-content: flex-start;
     gap: 10%;
   }
-  .list-links .movie-title-hover {
-    font-size: 0.5rem;
+  .section-list .movie-item .list-links .movie-title-hover {
+    padding-top: 2rem;
+    font-size: 1rem;
   }
-  .list-links .container-year-genre-hover p {
+  .section-list .movie-item .list-links .btn-like {
+    padding: 0.5rem 1rem;
+    font-size: 0.4rem;
+  }
+  .section-list .movie-item .list-links a {
     font-size: 0.5rem;
+    text-align: start;
+    width: 4rem;
+    height: 1.8rem;
+  }
+  .section-list .movie-item .list-links a p {
+    margin-left: 0.7rem;
+    margin-top: 0.2rem;
+  }
+  .section-list .movie-item .container-year-genre-hover {
+    border-top: 0;
+    margin: 0.9rem;
+    border-top: 0.2rem solid white;
+  }
+  .section-list .movie-item .container-year-genre-hover p {
+    font-size: 0.7rem;
   }
 }
 .section-hero {
