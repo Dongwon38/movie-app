@@ -50,26 +50,25 @@ function PageFavs() {
       <img className="background-fav" src={Images} alt="Bakcground Image" />
       <h1>Favourites:</h1>
       <div className="container-center">
-      <div className="container-scroll-2">
-        <ul className="cast-list-2">
-          {dataList.map((movie) => (
-            <li  key={movie.id} className="cast-member-2">
+        <div className="container-scroll-2">
+          <ul className="cast-list-2">
+            {dataList.map((movie) => (
+              <li key={movie.id} className="cast-member-2">
                 <Link to={`/detail/${movie.id}`}>
-                    <img
-                      className="cast-member-photo-2"
-                      src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
-                      alt={movie.title}
-                      />
-                        <h2 className="movie-title">{movie.title}</h2>
+                  <img
+                    className="cast-member-photo-2"
+                    src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
                 </Link>
                 <div className="container-hover">
-                <h2>{movie.title}</h2>
-                <FavButton movieId={movie.id} />
+                  <h2>{movie.title}</h2>
+                  <FavButton movieId={movie.id} />
                 </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </main>
   );

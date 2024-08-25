@@ -1,226 +1,106 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-//starting 
-//setting background image
-.background-fav{
+// ======== Fav Page layout ======== //
+
+.main-favs {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+.container-center {
+  display: flex;
+  justify-content: center;
+}
+// ======== setting background image ======== //
+.background-fav {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.4;
+  filter: brightness(0.8);
 }
-// .back-drop{
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   z-index: -1;
-//   opacity: 0.3;
-// }
 
-
-.main-favs{
- h1{
+// ======== Page Title ======== //
+.main-favs h1 {
   text-align: center;
-}
+  padding-top: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
-.container-scroll-2{
- margin: 0 auto;
-  .cast-list-2{
-    padding: 0;
-    margin: 0;
-    .cast-member-2{
-      width: 17rem;
-      margin: 0 auto;
-      padding-top: 2rem;
-      border-radius: 1rem;
-      .cast-member-photo-2{
-        border-radius: 1rem;
-        box-shadow: 5px 5px 15px ($box-shadow-color-black);
-      }
-    }
-   
+@media (min-width: $tablet) {
+  .main-favs {
+    height: calc(100vh - 2.3rem);
   }
-
+  .main-favs h1 {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3rem;
+    padding-left: 6rem;
+  }
 }
 
-.movie-title{
+// ======== list-container ======== //
+.cast-list-2 {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 0;
+}
+
+@media (min-width: $mobile-large) {
+  .container-scroll-2 {
+    display: flex;
+    overflow-y: scroll;
+    max-width: $max-width;
+  }
+  .cast-list-2 {
+    display: grid;
+    height: 70vh;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 6rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .cast-list-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: $desktop-wide) {
+  .cast-list-2 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// ======== Movie-item style ======== //
+.cast-member-photo-2 {
+  border-radius: 1rem;
+  box-shadow: 5px 5px 15px ($box-shadow-color-black);
+}
+
+.movie-title {
   margin-top: 0.5rem;
 }
 
-//hover state
-.container-hover{
+.cast-list-2 img {
+  box-shadow: 1px 2px 5px ($box-shadow-color-black);
+}
+
+// ======== Hover state ======== //
+.container-hover {
   display: none;
-  position: absolute;
+  position: relative;
   top: 0;
-  }
-  
-  .cast-member-2:hover{
-    .container-hover{
-      display: block;
-    }
-  }
-  //hover state works
-
-
-
-@media (min-width: 48rem){
-//for tabled mode
-
-.main-favs{
-  padding-top: 10%;
-  h1{
-    font-size: 3rem;
-    display: flex;
-    justify-content: space-between;
-   margin-left: 6%;
-  }
 }
 
-//width of container has to be adjusted accurding to width in conatiner-scroll-2
-.container-center{
- width: 95%;
- margin: 0 auto;
- justify-self: center;
- margin-left: 5%;
+.cast-member-2 {
+  position: relative;
 }
-.container-scroll-2{
-  display: flex;
-  overflow: scroll;
-  overflow-x: scroll;
-  width: 94%;
-  margin: 0;
-  padding: 0;
-  //this looks good
-  border-radius: 1rem;
-  box-shadow: 10px 5px 10px ($box-shadow-color-black);
-  background-color: $bg-secondary-colo-fav;
-  .cast-list-2{
-    display: flex;
-    align-items: center;
-    gap: 5rem;
-    padding-left: 0;
-    height: 50rem;
-    border-radius: 1rem;
-    li:first-child{
-      margin-left: 1rem;
-    }
-    li:last-child{
-      margin-right: 1rem;
-    }
-    img{
-      box-shadow: 1px 2px 5px($box-shadow-color-black) ;
-      border-radius: 8px;
-    }
-    
-    //styles for every second child in ul
-    // li:nth-child(2n) {
-    //   background-color: $bg-secondary-color;
-    //   height: 11rem;
-    //   width: 8rem;
-    //   border-radius: 8px;
-    //   p {
-    //     margin-top: 0.3rem;
-    //     margin-left: 0.2rem;
-    //   }
-    // }
-    .cast-member-2{
-      width: 15rem;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      height: 28rem;
-    
-    }
-   
-    
-  }
-}
-//adding box shadow to images
-  .cast-member-photo-2{
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    
-  }
-
-
-
-.container-scroll-2{
-margin-bottom: 4rem;
-}
-//styling for background image
-.back-drop-2{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: -1;
-opacity: 0.3;
-}
-
-.cast-member-2{
-position: relative;
-}
-
-
-//hover state
-.container-hover{
-display: none;
-position: absolute;
-top: 0;
-}
-
-.cast-member-2:hover{
-  .container-hover{
-    display: block;
-  }
-}
-//hover state works
-
-
-
-}
-
-@media (min-width: 120rem){
-
-.main-favs{
-  padding-top: 5%;
-}
-  
-.container-center{
-
-  .container-scroll-2{
-    justify-content: center;
-    // height: 30rem;
-    .cast-list-2{
-      width: 100rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-
-      .movie-title{
-        padding-bottom: 2rem;
-      }
-      .cast-member-2{
-        width: 100%;
-      }
-     
-     
-      
-
-    }
-  }
- 
-
-}
-
-
-
+.cast-member-2:hover .container-hover {
+  display: block;
+  position: absolute;
 }

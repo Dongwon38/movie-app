@@ -5,11 +5,12 @@
 .main-nav {
   position: fixed;
   z-index: 100;
+  right: 0;
+  left: 0;
   bottom: 0;
-  width: 100vw;
   padding: 0 1rem;
   max-width: $max-width;
-  height: 2.5rem;
+  height: 2.3rem;
   display: flex;
   background-color: black;
 }
@@ -34,8 +35,8 @@
   .main-nav .logo-main {
     display: flex;
     align-items: center;
-    width: 10rem;
-    margin-right: 0rem;
+    width: 9rem;
+    margin: 0;
     img {
       height: auto;
     }
@@ -62,7 +63,6 @@
 .search-bar {
   display: flex;
   align-items: center;
-  margin-left: 0.5rem;
   overflow: hidden;
 }
 
@@ -83,6 +83,11 @@
   outline: none;
   color: white;
   font-size: 12px;
+}
+@media (min-width: $tablet) {
+  .search-bar input {
+    margin-left: 0.5rem;
+  }
 }
 
 // ======== btn-menu ======== //
@@ -105,7 +110,6 @@
     display: flex;
     list-style: none;
     text-transform: uppercase;
-    margin-right: 1rem;
     gap: 1rem;
     font-size: 12px;
   }

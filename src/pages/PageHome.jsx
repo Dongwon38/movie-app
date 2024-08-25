@@ -30,12 +30,13 @@ function PageHome() {
   const scrollAmount = 150;
 
   function handleScroll(direction) {
-    const container = document.querySelector('.category-nav');
+    const container = document.querySelector(".category-nav");
     if (container) {
-      const currentIndex = categories.findIndex(c => c.value === category);
+      const currentIndex = categories.findIndex((c) => c.value === category);
       const maxIndex = categories.length - 1;
 
-      let newIndex = direction === 'right' ? currentIndex + 1 : currentIndex - 1;
+      let newIndex =
+        direction === "right" ? currentIndex + 1 : currentIndex - 1;
       if (newIndex < 0) newIndex = 0;
       if (newIndex > maxIndex) newIndex = maxIndex;
 
@@ -51,13 +52,9 @@ function PageHome() {
       }
 
       container.scrollBy({
-        left: direction === 'right' ? scrollAmount : -scrollAmount,
-        behavior: 'smooth',
+        left: direction === "right" ? scrollAmount : -scrollAmount,
+        behavior: "smooth",
       });
-
-      // Update arrow visibility
-      setShowLeftArrow(newIndex > 0);
-      setShowRightArrow(newIndex < maxIndex);
     }
   }
 
@@ -70,14 +67,11 @@ function PageHome() {
         inline: "center",
       });
     }
-    setShowLeftArrow(index > 0);
-    setShowRightArrow(index < categories.length - 1);
   }, [category]);
 
   return (
     <main className="main-home">
       <HeroSection />
-
       <div className="sub-nav-container">
         <nav className="category-nav">
           {categories.map((cat, index) => (
@@ -94,26 +88,7 @@ function PageHome() {
             </button>
           ))}
         </nav>
-        {showLeftArrow && (
-          <img
-            className="nav-arrow-left"
-            src={arrowLeft}
-            alt="left-arrow"
-            onClick={() => handleScroll('left')}
-          />
-        )}
-        {showRightArrow && (
-          <img
-            className="nav-arrow-right"
-            src={arrowRight}
-            alt="right-arrow"
-            onClick={() => handleScroll('right')}
-          />
-        )}
       </div>
-
-      <h2>{category}</h2>
-
       <List category={category} page={page} setPage={setPage} />
     </main>
   );
