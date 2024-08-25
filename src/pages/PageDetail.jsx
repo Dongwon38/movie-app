@@ -43,7 +43,6 @@ function PageDetail() {
 
   return (
     <main className="main-detail">
-      <h1>Overview</h1>
       <div className="react-backdrop">
         <img
           className="back-drop"
