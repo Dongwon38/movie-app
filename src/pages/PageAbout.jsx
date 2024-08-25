@@ -23,7 +23,7 @@ function PageAbout() {
   </div>
 
 <section class="authors">
-<h4>&copy; Dongwon Kang, Ezequiel, Laura Kochen and Jon Marc Hore </h4>
+<h4>&copy; Dongwon Kang, Ezequiel, Laura Kochen and JM Hore </h4>
 <h4>Site made for educational purposes only.</h4>
 
 </section>

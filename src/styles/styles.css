@@ -410,6 +410,11 @@ h2 {
   font-size: 18.72px;
 }
 
+h4 {
+  font-size: 12px;
+  line-height: 1rem;
+}
+
 a {
   color: white;
 }
@@ -737,9 +742,9 @@ h4 {
   }
   .authors {
     bottom: 0;
-    font-size: 0.5px !important;
     color: white;
     text-align: center;
+    margin-bottom: 10px;
   }
 }
 @media (min-width: 50em) {
