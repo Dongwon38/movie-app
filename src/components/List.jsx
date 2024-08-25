@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import FavButton from "./FavButton";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
-import HeroSection from "./HeroSection";
 
 function List({ category, page, setPage }) {
   // list to store data from API
@@ -50,42 +49,36 @@ function List({ category, page, setPage }) {
   }, [page, category, searchText]);
 
   return (
-    <section>
-      <div className="section-list">
-      {movieList.map((movie) => {
-        return (
-          <article key={movie.id} className="movie-item">
-            <Link to={`/detail/${movie.id}`}>
-            <img
-              src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
-              alt={movie.title}
+    <section className="section-list">
+      <div className="list-container">
+        {movieList.map((movie) => {
+          return (
+            <article key={movie.id} className="movie-item">
+              <img
+                src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
+                alt={movie.title}
               />
-
               <div className="list-links">
-              <h2 className="movie-title-hover">{movie.title}
-              </h2>
-              <div      className="container-year-genre-hover"> 
-                <p className="release-year-hover">
-                  {movie.release_date?.slice(0, 4)} |
-                </p>
-                <div  className="container-rating-info-hover">
-                  <p className="movie-rating-hover">
-                    Score: <b>{movie.vote_average} / 10</b>
+                <h2 className="movie-title-hover">{movie.title}</h2>
+                <div className="container-year-genre-hover">
+                  <p className="release-year-hover">
+                    {movie.release_date?.slice(0, 4)} |
                   </p>
-                  <p className="movie-overview-hover">{movie.overview}</p>
+                  <div className="container-rating-info-hover">
+                    <p className="movie-rating-hover">
+                      Score: <b>{movie.vote_average} / 10</b>
+                    </p>
+                    <p className="movie-overview-hover">{movie.overview}</p>
+                  </div>
                 </div>
-              </div>
                 <div className="container-buttons-hover">
-                  <Link to={`/detail/${movie.id}`}>
-                    <MoreInfo />
-                  </Link>
+                  <Link to={`/detail/${movie.id}`}>{/* <MoreInfo /> */}</Link>
                   <FavButton movieId={movie.id} />
                 </div>
               </div>
             </article>
           );
         })}
-
       </div>
       <PageButton page={page} changePage={setPage} totalPages={totalPages} />
     </section>
