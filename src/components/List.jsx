@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import FavButton from "./FavButton";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
+
 import pinUnfill from "../../public/assets/images/icons/pin-unfill.svg";
 import pinFill from "../../public/assets/images/icons/pin-fill.svg";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
