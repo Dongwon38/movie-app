@@ -60,16 +60,32 @@ function List({ category, page, setPage }) {
               src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
               alt={movie.title}
               />
-            </Link>
-            <div className="list-links">
-              <Link to={`/detail/${movie.id}`}>
-                <p>More Info</p>
-              </Link>
-              <FavButton movieId={movie.id} />
-            </div>
-          </article>
-        );
-      })}
+
+              <div className="list-links">
+              <h2 className="movie-title-hover">{movie.title}
+              </h2>
+              <div      className="container-year-genre-hover"> 
+                <p className="release-year-hover">
+                  {movie.release_date?.slice(0, 4)} |
+                </p>
+                <div  className="container-rating-info-hover">
+                  <p className="movie-rating-hover">
+                    Score: <b>{movie.vote_average} / 10</b>
+                  </p>
+                  <p className="movie-overview-hover">{movie.overview}</p>
+                </div>
+              </div>
+                <div className="container-buttons-hover">
+                  <Link to={`/detail/${movie.id}`}>
+                    <MoreInfo />
+                  </Link>
+                  <FavButton movieId={movie.id} />
+                </div>
+              </div>
+            </article>
+          );
+        })}
+
       </div>
       <PageButton page={page} changePage={setPage} totalPages={totalPages} />
     </section>
