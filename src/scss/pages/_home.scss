@@ -31,11 +31,10 @@ body {
   position: fixed;
   z-index: 99;
   bottom: 2.4rem;
-  height: 2.5rem;
+  height: 2.3rem;
   width: 100%;
   max-width: $max-width;
   box-shadow: 2px 3px 15px ($box-shadow-color-black);
-  font-size: 14px;
 }
 
 @media (min-width: $tablet) {
@@ -50,25 +49,19 @@ body {
   height: 100%;
   overflow: scroll;
   background-color: rgb(131, 11, 11);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(2, 0, 36, 1) 0%,
-  //   rgba(142, 42, 42, 1) 40%,
-  //   rgba(0, 0, 0, 1) 100%
-  // );
-  // white-space: nowrap;
 }
 
 .category-nav button {
   @include normalize-object;
   color: white;
   text-transform: uppercase;
+  font-weight: 100;
   padding: 0 4px;
 }
 
 .btn-category.active {
   background-color: red;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 // horizontal-scroll & hide bar

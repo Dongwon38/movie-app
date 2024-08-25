@@ -5,6 +5,7 @@ import {
   poster_size,
   auth,
 } from "../globals/globalVariables";
+import { Link } from "react-router-dom";
 
 function HeroSection() {
   // to store data for hero section from the results
@@ -12,6 +13,8 @@ function HeroSection() {
   const [slideNumber, setSlideNumber] = useState(0);
   const heroSlide = heroSlides[slideNumber];
   const maxSlideIndex = 4;
+  const [genres, setGenres] = useState([]);
+  const heroSlidesGenre = [];
 
   useEffect(() => {
     const getDataFromApi = async () => {
@@ -24,13 +27,28 @@ function HeroSection() {
       });
       const data = await response.json();
 
+      // Call genres data
+      const response2 = await fetch(
+        `https://api.themoviedb.org/3/genre/movie/list`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: "Bearer " + auth,
+          },
+        }
+      );
+      const data2 = await response2.json();
+
       // set data
       setHeroSlides(data.results);
+      setGenres(data2.genres);
       console.log(data.results[0]);
     };
     getDataFromApi();
   }, []);
 
+  // Change hero-slides
   useEffect(() => {
     const interval = setInterval(() => {
       setSlideNumber((prev) => (prev + 1) % 5);
@@ -39,6 +57,7 @@ function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
+  // Slide page button
   function handleSlide(e) {
     const PrevOrNext = e.target.value;
 
@@ -54,33 +73,50 @@ function HeroSection() {
     }
   }
 
+  // set genres
+  if (heroSlide) {
+    heroSlide.genre_ids.forEach((id) => {
+      if (genres) {
+        genres.find((e) => {
+          if (e.id === id) {
+            heroSlidesGenre.push(e.name);
+          }
+        });
+      }
+    });
+  }
+
   return (
     <section className="section-hero">
       <div className="info-container">
-        <div className="placeholder"></div>
         <div className="btn-container">
           <button onClick={handleSlide} value="prev">
             &lt;
           </button>
+        </div>
+        {heroSlide && (
+          <div className="hero-info">
+            <Link
+              to={`/detail/${heroSlide.id}`}
+              className="hero-info-container"
+            >
+              <div className="hero-label">trending now</div>
+              <h3>{heroSlide.title}</h3>
+              <p className="hero-overview">{heroSlide.overview}</p>
+              <ul className="genre-list">
+                {heroSlidesGenre.slice(0, 2).map((element, i) => {
+                  return <li key={i}>{element}</li>;
+                })}
+              </ul>
+              <p>Ratings: {heroSlide.vote_average.toFixed(1)} / 10</p>
+            </Link>
+          </div>
+        )}
+        <div className="btn-container">
           <button onClick={handleSlide} value="next">
             &gt;
           </button>
         </div>
-        {heroSlide && (
-          <div className="hero-info">
-            <h3>{heroSlide.title}</h3>
-            <p>
-              {heroSlide.release_date} | {heroSlide.vote_average} / 10
-            </p>
-            <p className="hero-overview">{heroSlide.overview}</p>
-            {/* <div className="list-links">
-                <Link to={`/detail/${heroSlide.id}`}>
-                  <MoreInfo />
-                </Link>
-                <FavButton movieId={heroSlide.id} />
-              </div> */}
-          </div>
-        )}
       </div>
       {heroSlide && (
         <div className="poster-container">

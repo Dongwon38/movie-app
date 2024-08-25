@@ -53,7 +53,7 @@ function PageDetail() {
         <div className="container-desktop">
           <img
             className="img-poster"
-            src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
+            src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
             alt={movie.title}
           />
           <div className="container-grid-top">

@@ -16,6 +16,7 @@ function PageHome() {
 
   function handleSetCategory(e) {
     const newType = e.target.value;
+    console.log(e.target);
     if (newType !== category) {
       setCategory(newType);
       setPage(1);
@@ -54,7 +55,9 @@ function PageHome() {
           ))}
         </nav>
       </div>
-      <h2>{category} list</h2>
+
+      <h2>{category}</h2>
+
       <List category={category} page={page} setPage={setPage} />
     </main>
   );
