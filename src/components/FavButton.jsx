@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
 import { useDispatch } from "react-redux";
+import pinIcon from "../../public/assets/images/icons/pin-unfill.svg";
+import pinIconFill from "../../public/assets/images/icons/pin-fill.svg";
 
 // button for add/remove movie on fav-list localstorage
 
@@ -53,7 +55,10 @@ function FavButton({ movieId }) {
       type="button"
       className="btn-like"
     >
-      {isFav ? "Dislike" : "Like"}
+      <img  src={isFav ? pinIconFill : pinIcon } 
+            alt={isFav ? "Link" : "Dislike"}
+            className="favPin"
+      />
     </button>
   );
 }

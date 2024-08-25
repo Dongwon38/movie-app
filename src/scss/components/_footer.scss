@@ -1,2 +1,15 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
+
+.footer-container {
+    background-color: rgb(135, 20, 20);
+    display: flex;
+    justify-content: center;
+
+    .footer-logo {
+        width: 100%;
+        padding: 2rem;
+        margin-bottom: 3rem;
+        max-width: 20rem;
+    }
+}

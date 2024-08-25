@@ -7,6 +7,7 @@ $secondary-color: white;
 // background-color
 $bg-primary-color: #121212;
 $bg-secondary-color: #b30000;
+$bg-secondary-colo-fav: #d07777;
 
 //background-color from wireframe
 $bq-dark-grey: #333333;
@@ -24,6 +25,9 @@ $secondary-font: monospace;
 $box-shadow-color-black: black;
 
 
+//color for background block favourites 
+$background-favourites: rgb(61, 61, 61);
+
 // Breakpoints
 $mobile: 20em; // 320px
 $tablet: 31.25em; // 500px
@@ -32,3 +36,4 @@ $max-width: 125em; // 2000px
 
 // comment for dividing
 // ======== main layout ======== //
+
