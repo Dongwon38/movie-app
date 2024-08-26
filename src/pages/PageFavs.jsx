@@ -11,12 +11,14 @@ import pinUnfill from "../../public/assets/images/icons/pin-unfill.svg";
 import pinFill from "../../public/assets/images/icons/pin-fill.svg";
 import Images from "../../public/assets/images/bg/fav-bg.jpg";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
+import noResult from "../../public/assets/images/bg/noResult.jpg";
 
 function PageFavs() {
   // to store fav list coming from local storage
   const [favList, setFavList] = useState([]);
   // to store entire movie from fav list
   const [dataList, setDataList] = useState([]);
+  const [countFavList, setCountFavList] = useState("");
 
   // bring data from local storage
   useEffect(() => {
@@ -46,7 +48,14 @@ function PageFavs() {
     favList.forEach((movie) => {
       getDataFromApi(movie.id);
     });
+    setCountFavList(favList.length);
   }, [favList]);
+  console.log(countFavList);
+
+  // Cut Text for overview
+  const cutText = (text, maxLength) => {
+    return text.length <= maxLength ? text : text.slice(0, maxLength) + "...";
+  };
 
   // Fav buttons
   // add or delete moive from Fav List
@@ -60,44 +69,59 @@ function PageFavs() {
 
   return (
     <main className="main-favs">
-      <img className="background-fav" src={Images} alt="Bakcground Image" />
-      <h1>Favourites:</h1>
-      <ul className="section-fav-list">
-        {dataList.map((movie) => {
-          const isFav = isFavorite(movie.id);
-          return (
-            // movie-item
-            <li key={movie.id} className="movie-item">
-              <Link to={`/detail/${movie.id}`}>
-                <img
-                  className="movie-poster"
-                  src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
-                  alt={movie.title}
-                />
-              </Link>
-              {/* Overlay */}
-              <div className="overlay">
-                <img
-                  src={isFav ? pinFill : pinUnfill}
-                  alt={isFav ? "Favorited" : "Not Favorited"}
-                  className="fav-pin"
-                  onClick={(e) => handleFavoriteToggle(movie, e)}
-                />
-                <div className="overlay-top">
-                  <h3 className="overlay-title">{movie.title}</h3>
-                </div>
-                <div className="overlay-bottom">
-                  <p className="overlay-overview">
-                    <Link to={`/detail/${movie.id}`} className="more-info fav">
-                      Go to Detail
-                    </Link>
-                  </p>
-                </div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      {countFavList > 0 ? (
+        <>
+          <img className="background-fav" src={Images} alt="Bakcground Image" />
+          <h1>Favourites: </h1>
+          <ul className="section-fav-list">
+            {dataList.map((movie) => {
+              const isFav = isFavorite(movie.id);
+              return (
+                // movie-item
+                <li key={movie.id} className="movie-item">
+                  <Link to={`/detail/${movie.id}`}>
+                    <img
+                      className="movie-poster"
+                      src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
+                      alt={movie.title}
+                    />
+                  </Link>
+                  {/* Overlay */}
+                  <div className="overlay">
+                    <img
+                      src={isFav ? pinFill : pinUnfill}
+                      alt={isFav ? "Favorited" : "Not Favorited"}
+                      className="fav-pin"
+                      onClick={(e) => handleFavoriteToggle(movie, e)}
+                    />
+                    <div className="overlay-top">
+                      <h3 className="overlay-title">{movie.title}</h3>
+                    </div>
+                    <div className="overlay-bottom">
+                      <p className="overlay-overview">
+                        {cutText(movie.overview, 100)}{" "}
+                        <Link to={`/detail/${movie.id}`} className="more-info">
+                          More info
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      ) : (
+        <div className="page-favs no-result">
+          <img src={noResult} alt="" />
+          <h1>Favourite list is Empty!</h1>
+          <div className="result-container">
+            <p>
+              Explore movies on our website and <b>PIN</b> on it!
+            </p>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

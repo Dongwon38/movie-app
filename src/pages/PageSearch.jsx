@@ -4,28 +4,28 @@ import { GlobalContext } from "../context/GlobalState";
 import noResult from "../../public/assets/images/bg/noResult.jpg";
 
 function PageSearch() {
-  const [category, setCategory] = useState("popular");
+  const category = "popular";
   const [page, setPage] = useState(1);
 
   // for searching
   const { searchText, totalMoives } = useContext(GlobalContext);
 
-  console.log("Searching:", searchText);
-  console.log("results:", totalMoives);
-
   return (
-    <main className="main-home">
+    <main className="main-search">
       {totalMoives > 0 ? (
-        <div>
+        <div className="page-search">
           <h2>Search: {searchText}</h2>
           <p>({totalMoives} movies found)</p>
           <List category={category} page={page} setPage={setPage} />
         </div>
       ) : (
-        <div>
-          <h2>Search: {searchText}</h2>
+        <div className="page-search no-result">
           <img src={noResult} alt="" />
-          <p>sorry, we couldn't find any movies.</p>
+          <h2>Search: {searchText}</h2>
+          <div className="result-container">
+            <p>sorry! we couldn't find any movies.</p>
+            <p>Try another word.</p>
+          </div>
         </div>
       )}
     </main>

@@ -4,11 +4,9 @@
 @use "./base/mixins";
 @use "./base/default-setting";
 
-// utilities
-@use "./utilities/intro-animation";
-
 // pages
 @use "./pages/home";
+@use "./pages/search";
 @use "./pages/about";
 @use "./pages/detail";
 @use "./pages/favs";
