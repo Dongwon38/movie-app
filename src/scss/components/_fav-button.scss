@@ -1,5 +1,7 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-.btn-like {
+.btn-like,
+.fav-pin {
+  cursor: pointer;
 }

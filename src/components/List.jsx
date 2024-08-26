@@ -8,36 +8,25 @@ import {
   auth,
 } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
-import FavButton from "./FavButton";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
-
 import pinUnfill from "../../public/assets/images/icons/pin-unfill.svg";
 import pinFill from "../../public/assets/images/icons/pin-fill.svg";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
 
 function List({ category, page, setPage }) {
-  // list to store data from API
-  const [movieList, setMovieList] = useState([]);
-  // to store total pages from the results
-  const [totalPages, setTotalPages] = useState(null);
-
-  // get GlobalContext
+  // global state
   const { searchText, countMovies } = useContext(GlobalContext);
 
-  // Access favorite movies from Redux store
-  const favorites = useSelector((state) => state.favs.items);
-  const dispatch = useDispatch();
+  // set list for display
+  const [movieList, setMovieList] = useState([]);
 
-  // Check if there is a search text
+  // Get data from API
   const fetchUrl =
-    searchText == null || searchText === ""
+    searchText === null || searchText === ""
       ? `${endPoint}${category}?language=en-US&page=${page}`
       : `${searchEndPoint}?query=${searchText}&page=${page}`;
-  
-  const [hoveredMovieId, setHoveredMovieId] = useState(null);
 
-  // get movie Data From API
   useEffect(() => {
     const getDataFromApi = async () => {
       const response = await fetch(fetchUrl, {
@@ -48,81 +37,69 @@ function List({ category, page, setPage }) {
         },
       });
       const data = await response.json();
-      console.log(data);
-
-      // set data
       setMovieList(data.results);
-      setTotalPages(data.total_pages);
       countMovies(data.total_results);
     };
     getDataFromApi();
-    // check change on "page" and "category"
   }, [page, category, searchText]);
 
+  // Cut Text for overview
   const cutText = (text, maxLength) => {
-    if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength) + '...';
+    return text.length <= maxLength ? text : text.slice(0, maxLength) + "...";
   };
 
-  const isFavorite = (id) => {
-    return favorites.some((fav) => fav.id === id);
-  };
-
-  const handleFavoriteToggle = (movie) => {
-    if (isFavorite(movie.id)) {
-      dispatch(deleteFav(movie));
-    } else {
-      dispatch(addFav(movie));
-    }
+  // add or delete moive from Fav List
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favs.items);
+  const isFavorite = (id) => favorites.some((fav) => fav.id === id);
+  const handleFavoriteToggle = (movie, e) => {
+    e.stopPropagation();
+    isFavorite(movie.id) ? dispatch(deleteFav(movie)) : dispatch(addFav(movie));
   };
 
   return (
     <section>
       <div className="section-list">
-      {movieList.map((movie) => {
-        const isFav = isFavorite(movie.id);
-        return (
-          <article
-            key={movie.id}
-            className="movie-item"
-            onMouseOver={() => setHoveredMovieId(movie.id)}
-            onMouseOut={() => setHoveredMovieId(null)}
-          >
-            <Link to={`/detail/${movie.id}`}>
-            <img
-              src={`${poster_base_url}/${poster_size[3]}/${movie.poster_path}`}
-              alt={movie.title}
-              />
-            </Link>
-              {hoveredMovieId === movie.id && (
-                <div className="overlay">
-                  <img  
-                    src={isFav ? pinFill : pinUnfill} 
-                    alt={isFav ? "Favorited" : "Not Favorited"}
-                    className="favPin"
-                    onClick={() => handleFavoriteToggle(movie)}
-                  />
-                  <h3>{movie.title}</h3>
-                  <p>{cutText(movie.overview, 100)}</p>
-                  <Link to={`/detail/${movie.id}`}>
-                  <p className="moreInfo">More Info</p>
-                  </Link>
-                </div>
-              )}
-            <div className="list-links">
+        {movieList.map((movie) => {
+          // check if it is Fav
+          const isFav = isFavorite(movie.id);
+          return (
+            // movie-item
+            <article key={movie.id} className="movie-item">
               <Link to={`/detail/${movie.id}`}>
-                <p>More Info</p>
+                <img
+                  src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
+                  alt={movie.title}
+                  className="movie-poster"
+                />
               </Link>
-              <FavButton movieId={movie.id} />
-            </div>
-          </article>
-        );
-      })}
+              {/* Overlay */}
+              <div className="overlay">
+                <img
+                  src={isFav ? pinFill : pinUnfill}
+                  alt={isFav ? "Favorited" : "Not Favorited"}
+                  className="fav-pin"
+                  onClick={(e) => handleFavoriteToggle(movie, e)}
+                />
+                <div className="overlay-top">
+                  <h3 className="overlay-title">{movie.title}</h3>
+                </div>
+                <div className="overlay-bottom">
+                  <p className="overlay-overview">
+                    {cutText(movie.overview, 100)}{" "}
+                    <Link to={`/detail/${movie.id}`} className="more-info">
+                      More info
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </div>
-      <PageButton page={page} changePage={setPage} totalPages={totalPages} />
+      <PageButton page={page} changePage={setPage} />
     </section>
   );
 }
 
 export default List;
-

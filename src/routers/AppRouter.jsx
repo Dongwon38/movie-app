@@ -12,12 +12,14 @@ import PageSearch from "../pages/PageSearch";
 import PageDetail from "../pages/PageDetail";
 import PageFavs from "../pages/PageFavs";
 import PageAbout from "../pages/PageAbout";
+import ScrollProgressBar from "../components/ScrollProgressBar";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <GlobalProvider>
         <div className="wrapper">
+          <ScrollProgressBar />
           <Header />
           <MenuLayer />
           <Nav />

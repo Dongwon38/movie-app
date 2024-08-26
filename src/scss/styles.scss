@@ -1,19 +1,18 @@
 // Reset and Defaults
 @use "./base/normalize";
-@use "./base/typography";
 @use "./base/vars";
 @use "./base/mixins";
-
-// utilities
-@use "./utilities/intro-animation";
+@use "./base/default-setting";
 
 // pages
 @use "./pages/home";
+@use "./pages/search";
 @use "./pages/about";
 @use "./pages/detail";
 @use "./pages/favs";
 
 // components
+@use "./components/scroll-progress-bar";
 @use "./components/header";
 @use "./components/footer";
 @use "./components/nav";

@@ -5,19 +5,14 @@
 .main-nav {
   position: fixed;
   z-index: 100;
+  right: 0;
+  left: 0;
   bottom: 0;
-  width: 100%;
+  padding: 0 1rem;
   max-width: $max-width;
-  height: 2.5rem;
+  height: 2.3rem;
   display: flex;
   background-color: black;
-}
-
-.main-nav .btn-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
 }
 
 .main-nav .logo-main {
@@ -27,30 +22,48 @@
 @media (min-width: $tablet) {
   .main-nav {
     top: 0;
-    padding-left: 1rem;
-    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+  }
+  .main-nav-scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
   }
 
   .main-nav .logo-main {
     display: flex;
     align-items: center;
-    width: 10rem;
-    margin-right: 2rem;
+    width: 9rem;
+    margin: 0;
     img {
       height: auto;
     }
   }
+}
 
+// ======== button-container ======== //
+
+.main-nav .btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 100;
+}
+
+@media (min-width: $desktop) {
   .main-nav .btn-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
   }
 }
 
 // ======== search-bar ======== //
 .search-bar {
-  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .search-bar form {
@@ -58,18 +71,23 @@
   justify-content: center;
 }
 
-.search-bar i {
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-}
-.search-bar input {
-  @include normalize-object;
-  border-bottom: 2px solid white;
-  outline: none;
-}
-
 .search-bar input::placeholder {
   color: white;
+  font-weight: 100;
+}
+
+.search-bar input {
+  @include normalize-object;
+  width: 52px;
+  margin-right: 1rem;
+  outline: none;
+  color: white;
+  font-size: 12px;
+}
+@media (min-width: $tablet) {
+  .search-bar input {
+    margin-left: 0.5rem;
+  }
 }
 
 // ======== btn-menu ======== //
@@ -79,6 +97,24 @@
   display: flex;
 }
 
-i:last-child {
-  font-size: 1.5rem;
+.btn-menu-desktop {
+  display: none;
+}
+
+@media (min-width: $desktop) {
+  .btn-menu {
+    display: none;
+  }
+
+  .btn-menu-desktop {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    gap: 1rem;
+    font-size: 12px;
+  }
+}
+
+.btn-menu i {
+  font-size: 14px;
 }

@@ -2,20 +2,22 @@
 @use "../base/mixins" as *;
 
 .footer-container {
-    background-color: rgb(135, 20, 20);
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2.5rem;
+  background-color: rgb(135, 20, 20);
+  display: flex;
+  justify-content: center;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
 
-    .footer-logo {
-        width: 100%;
-        padding: 2rem;
-        max-width: 20rem;
-    }
+  .footer-logo {
+    margin: 6px 0;
+    height: 24.8px;
+    max-width: 20rem;
+  }
 }
 
-@media (min-width: $tablet) {
-    .footer-container {
-        margin-bottom: 0;
-    }
+.footer-container {
+  margin-bottom: 4.6rem;
+
+  @media (min-width: $tablet) {
+    margin-bottom: 0;
+  }
 }

@@ -1,23 +1,10 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-
-
 body {
-  background-color: $bg-primary-color;
   font-family: $primary-font;
   color: $text-primary-color;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-font-family: $primary-font;
-color: $text-primary-color;
+  background-color: $bg-primary-color;
 }
 
 p {
@@ -35,10 +22,18 @@ h2 {
 h4 {
   font-size: 12px;
   line-height: 1rem;
-  
 }
 
 a {
   color: $text-primary-color;
+  text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
