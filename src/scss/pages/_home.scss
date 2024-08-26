@@ -2,7 +2,6 @@
 @use "../base/mixins" as *;
 
 body {
-  background-color: $bg-primary-color;
   display: flex;
   justify-content: center;
 }

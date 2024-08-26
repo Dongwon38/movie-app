@@ -1,8 +1,8 @@
 // Reset and Defaults
 @use "./base/normalize";
-@use "./base/typography";
 @use "./base/vars";
 @use "./base/mixins";
+@use "./base/default-setting";
 
 // utilities
 @use "./utilities/intro-animation";

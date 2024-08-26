@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   endPoint,
   poster_base_url,
@@ -6,8 +7,10 @@ import {
   auth,
 } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
-import FavButton from "../components/FavButton";
+import pinUnfill from "../../public/assets/images/icons/pin-unfill.svg";
+import pinFill from "../../public/assets/images/icons/pin-fill.svg";
 import Images from "../../public/assets/images/bg/fav-bg.jpg";
+import { addFav, deleteFav } from "../features/favs/favsSlice";
 
 function PageFavs() {
   // to store fav list coming from local storage
@@ -45,31 +48,56 @@ function PageFavs() {
     });
   }, [favList]);
 
+  // Fav buttons
+  // add or delete moive from Fav List
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.favs.items);
+  const isFavorite = (id) => favorites.some((fav) => fav.id === id);
+  const handleFavoriteToggle = (movie, e) => {
+    e.stopPropagation();
+    isFavorite(movie.id) ? dispatch(deleteFav(movie)) : dispatch(addFav(movie));
+  };
+
   return (
     <main className="main-favs">
       <img className="background-fav" src={Images} alt="Bakcground Image" />
       <h1>Favourites:</h1>
-      <div className="container-center">
-        <div className="container-scroll-2">
-          <ul className="cast-list-2">
-            {dataList.map((movie) => (
-              <li key={movie.id} className="cast-member-2">
-                <Link to={`/detail/${movie.id}`}>
-                  <img
-                    className="cast-member-photo-2"
-                    src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
-                    alt={movie.title}
-                  />
-                </Link>
-                <div className="container-hover">
-                  <h2>{movie.title}</h2>
-                  <FavButton movieId={movie.id} />
+      <ul className="section-fav-list">
+        {dataList.map((movie) => {
+          const isFav = isFavorite(movie.id);
+          return (
+            // movie-item
+            <li key={movie.id} className="movie-item">
+              <Link to={`/detail/${movie.id}`}>
+                <img
+                  className="movie-poster"
+                  src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </Link>
+              {/* Overlay */}
+              <div className="overlay">
+                <img
+                  src={isFav ? pinFill : pinUnfill}
+                  alt={isFav ? "Favorited" : "Not Favorited"}
+                  className="fav-pin"
+                  onClick={(e) => handleFavoriteToggle(movie, e)}
+                />
+                <div className="overlay-top">
+                  <h3 className="overlay-title">{movie.title}</h3>
                 </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+                <div className="overlay-bottom">
+                  <p className="overlay-overview">
+                    <Link to={`/detail/${movie.id}`} className="more-info fav">
+                      Go to Detail
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </main>
   );
 }

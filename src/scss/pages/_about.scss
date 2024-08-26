@@ -1,10 +1,6 @@
 @use "../base/vars" as *;
 @use "../base/mixins" as *;
 
-body {
-  background-color: $bg-dark-grey;
-}
-
 .main-about {
   display: flex;
   width: 100vw;
