@@ -1,0 +1,111 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+.main-about {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container-about p,
+.container-about h2,
+.container-about h1 {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.heading-text {
+  color: $text-primary-color;
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 18.72px;
+}
+
+p {
+  font-size: 16 px;
+}
+
+h4 {
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 5px;
+}
+
+.popcorn-image {
+  display: none;
+}
+
+.authors {
+  bottom: 0;
+  font-size: 0.5px !important;
+  color: white;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+@media (min-width: 48rem) {
+  .about-image {
+    width: 100%;
+    height: auto;
+    height: 100vh;
+    display: block;
+    object-fit: cover;
+    filter: brightness(50%);
+    // position: relative;
+    // overflow: hidden;
+    // background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 60%);
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0)
+    );
+    pointer-events: none;
+  }
+
+  .container-about {
+    position: absolute;
+    top: 0;
+    max-width: 800px;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    color: white;
+    text-align: left;
+    z-index: 1;
+    line-height: 2 rem;
+  }
+
+  .about-mobile {
+    display: block;
+  }
+
+  .authors {
+    bottom: 0;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 50em) {
+  .container-about {
+    line-height: 2rem;
+  }
+}
+
+.tmdb-logo {
+  height: 10px;
+}

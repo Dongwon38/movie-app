@@ -1,0 +1,175 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+// ======== main layout ======== //
+.main-detail {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-width: $max-width;
+}
+
+// ======== bg styling ======== //
+.back-drop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.3);
+}
+
+// ======== detail-container grid ======== //
+@media (min-width: $tablet) {
+  .detail-container {
+    padding: 2rem 0;
+  }
+}
+@media (min-width: $desktop) {
+  .detail-container {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    padding: 3rem;
+  }
+  .detail-cast {
+    grid-column: span 2;
+  }
+}
+
+// ======== detail-poster ======== //
+.detail-poster {
+  padding: 1rem;
+  object-fit: contain;
+  object-position: top;
+}
+
+//
+.detail-inner-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+// ======== detail-info ======== //
+
+.detail-info {
+  position: relative;
+  padding: 1rem;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-cast {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.detail-top-box {
+  display: flex;
+  gap: 2rem;
+}
+
+.detail-top-box .title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0;
+}
+
+@media (min-width: $tablet) {
+  .detail-top-box .btn-like img {
+    width: 2rem;
+  }
+}
+
+.detail-middle-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-middle-box .year-rating {
+  display: flex;
+  gap: 1rem;
+}
+.detail-middle-box .genres {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.detail-bottom-box {
+  h3,
+  p {
+    padding: 0;
+    margin: 0;
+    font-weight: 100;
+  }
+  h3 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+}
+.detail-bottom-box .movie-overview {
+  max-height: 8.1rem;
+  overflow-y: hidden;
+}
+
+// ======== movie-trailer ======== //
+
+@media (min-width: $desktop) {
+  .trailer-container {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+.trailer-container h3 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.trailer-container button {
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 1rem;
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+// ======== detail-cast ======== //
+.cast-list-wrapper {
+  display: flex;
+  overflow-x: scroll;
+}
+.cast-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.cast-member {
+  width: 9rem;
+}
+
+.cast-member-photo {
+  box-shadow: 1px 2px 5px ($box-shadow-color-black);
+}
+
+.cast-member-name {
+  text-align: center;
+  margin: 0.5rem;
+  font-weight: 100;
+  word-wrap: break-word;
+}

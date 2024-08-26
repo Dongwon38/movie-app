@@ -1,8 +1,23 @@
 // Reset and Defaults
 @use "./base/normalize";
-@use "./base/typography";
 @use "./base/vars";
 @use "./base/mixins";
+@use "./base/default-setting";
+
+// pages
+@use "./pages/home";
+@use "./pages/search";
+@use "./pages/about";
+@use "./pages/detail";
+@use "./pages/favs";
 
 // components
-// @use "./components/file name";
+@use "./components/scroll-progress-bar";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/nav";
+@use "./components/menu-layer";
+@use "./components/list";
+@use "./components/hero-section";
+@use "./components/page-button";
+@use "./components/fav-button";

@@ -1,0 +1,86 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+// ======== main layout ======== //
+.main-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-home h1 {
+  margin: 0 0 2rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.main-home h2 {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+// ======== sub-nav category ======== //
+.sub-nav-container {
+  position: fixed;
+  z-index: 99;
+  bottom: 2.3rem;
+  height: 2.3rem;
+  width: 100%;
+  max-width: $max-width;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
+}
+
+@media (min-width: $tablet) {
+  .sub-nav-container {
+    position: static;
+  }
+}
+
+.category-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  overflow: scroll;
+  background-color: rgb(131, 11, 11);
+}
+
+.category-nav button {
+  @include normalize-object;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 100;
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.btn-category.active {
+  background-color: red;
+  font-weight: 600;
+}
+
+// horizontal-scroll & hide bar
+.category-nav::-webkit-scrollbar {
+  display: none;
+}
+// horizontal-scroll & hide bar for firefox
+.category-nav {
+  scrollbar-width: none;
+}
+
+.category-nav button {
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-size: 12px;
+}
+@media (min-width: $tablet) {
+  .category-nav button {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,39 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+body {
+  font-family: $primary-font;
+  color: $text-primary-color;
+  background-color: $bg-primary-color;
+}
+
+p {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 18.72px;
+}
+
+h4 {
+  font-size: 12px;
+  line-height: 1rem;
+}
+
+a {
+  color: $text-primary-color;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}

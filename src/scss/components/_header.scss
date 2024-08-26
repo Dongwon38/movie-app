@@ -1,0 +1,26 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+header {
+  position: sticky;
+  z-index: 100;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 3px 15px ($box-shadow-color-black);
+  background-color: black;
+}
+
+.logo-main {
+  img {
+    display: block;
+    width: 10rem;
+  }
+}
+
+@media (min-width: $tablet) {
+  header {
+    display: none;
+  }
+}

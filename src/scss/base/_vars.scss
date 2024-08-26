@@ -1,1 +1,45 @@
-$test-color: lightgray;
+// $test-color: lightgray;
+
+// theme-color
+$primary-color: #ff0000;
+$secondary-color: white;
+
+// navigation-bar reds
+$background-nav: #830b0b;
+$backgroung-nav-hover: #ff0000;
+
+// background-color
+$bg-primary-color: #222;
+$bg-secondary-color: #ff0000;
+$bg-secondary-colo-fav: #d07777;
+
+//background-color from wireframe
+$bg-dark-grey: #333;
+
+// text-color
+$text-primary-color: white;
+$text-secondary-color: black;
+
+// font-family
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap");
+$primary-font: "Inter";
+$secondary-font: monospace;
+
+//boxshadow color for images
+$box-shadow-color-black: black;
+
+//color for background block favourites
+$background-favourites: rgb(61, 61, 61);
+
+// Breakpoints
+$mobile: 20em; // 320px
+$mobile-large: 31.25rem; // 500px
+$tablet: 43.75em; // 700px
+$desktop: 62.5em; // 1000px
+$desktop-wide: 80em; // 1280px
+$max-width: 125em; // 2000px
+
+// comment for dividing
+// ======== main layout ======== //
