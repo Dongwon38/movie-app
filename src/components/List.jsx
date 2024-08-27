@@ -76,7 +76,7 @@ function List({ category, page, setPage }) {
               {/* Overlay */}
               <div className="overlay">
                 <img
-                  src={isFav ? { pinFill } : { pinUnfill }}
+                  src={isFav ? pinFill : pinUnfill}
                   alt={isFav ? "Favorited" : "Not Favorited"}
                   className="fav-pin"
                   onClick={(e) => handleFavoriteToggle(movie, e)}

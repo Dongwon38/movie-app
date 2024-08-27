@@ -56,7 +56,7 @@ function FavButton({ movieId }) {
       className="btn-like"
     >
       <img
-        src={isFav ? { pinFill } : { pinUnfill }}
+        src={isFav ? pinFill : pinUnfill}
         alt={isFav ? "Link" : "Dislike"}
         className="favPin"
       />
