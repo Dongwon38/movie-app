@@ -1,7 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import List from "../components/List";
 import { GlobalContext } from "../context/GlobalState";
-import noResult from "../../public/assets/images/bg/noResult.jpg";
+import noResult from "/src/assets/images/bg/noResult.jpg";
 
 function PageSearch() {
   const category = "popular";
