@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../public/assets/images/logo/logo3.png";
+import logo from "/src/assets/images/logo/logo3.png";
 
 function Nav() {
   const [scrolling, setScrolling] = useState(false);
@@ -44,7 +44,7 @@ function Nav() {
   return (
     <nav className={`main-nav ${scrolling ? "main-nav-scrolled" : ""}`}>
       <div className="logo-main">
-        <a href="/">
+        <a href="/movie-pin">
           <img src={logo} alt="website logo Movie-Pin" />
         </a>
       </div>

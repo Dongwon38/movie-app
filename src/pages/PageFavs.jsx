@@ -7,11 +7,10 @@ import {
   auth,
 } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
-import pinUnfill from "../../public/assets/images/icons/pin-unfill.svg";
-import pinFill from "../../public/assets/images/icons/pin-fill.svg";
-import Images from "../../public/assets/images/bg/fav-bg.jpg";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
-import noResult from "../../public/assets/images/bg/noResult.jpg";
+import noResult from "/src/assets/images/bg/noResult.jpg";
+import pinFill from "/src/assets/images/icons/pin-fill.svg";
+import pinUnfill from "/src/assets/images/icons/pin-unfill.svg";
 
 function PageFavs() {
   // to store fav list coming from local storage
@@ -71,7 +70,11 @@ function PageFavs() {
     <main className="main-favs">
       {countFavList > 0 ? (
         <>
-          <img className="background-fav" src={Images} alt="Bakcground Image" />
+          <img
+            className="background-fav"
+            src={noResult}
+            alt="Bakcground Image"
+          />
           <h1>Favourites: </h1>
           <ul className="section-fav-list">
             {dataList.map((movie) => {
@@ -89,7 +92,7 @@ function PageFavs() {
                   {/* Overlay */}
                   <div className="overlay">
                     <img
-                      src={isFav ? pinFill : pinUnfill}
+                      src={isFav ? { pinFill } : { pinUnfill }}
                       alt={isFav ? "Favorited" : "Not Favorited"}
                       className="fav-pin"
                       onClick={(e) => handleFavoriteToggle(movie, e)}

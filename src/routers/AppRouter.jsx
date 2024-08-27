@@ -16,7 +16,7 @@ import ScrollProgressBar from "../components/ScrollProgressBar";
 
 function AppRouter() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`/movie-pin`}>
       <GlobalProvider>
         <div className="wrapper">
           <ScrollProgressBar />

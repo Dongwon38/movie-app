@@ -1,10 +1,10 @@
 import React from "react";
-import background from "/assets/images/bg/aboutPg-edited.png";
+import bg from "/src/assets/images/bg/aboutPg-edited.png";
 
 function PageAbout() {
   return (
     <main className="main-about">
-      <img className="about-image" src={background} alt="Background" />
+      <img className="about-image" src={bg} alt="Background" />
 
       <div className="container-about">
         <h1 className="about-title">Welcome to MOVIEPIN</h1>

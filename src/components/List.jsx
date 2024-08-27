@@ -10,9 +10,9 @@ import {
 import { Link } from "react-router-dom";
 import PageButton from "./PageButton";
 import { GlobalContext } from "../context/GlobalState";
-import pinUnfill from "../../public/assets/images/icons/pin-unfill.svg";
-import pinFill from "../../public/assets/images/icons/pin-fill.svg";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
+import pinFill from "/src/assets/images/icons/pin-fill.svg";
+import pinUnfill from "/src/assets/images/icons/pin-unfill.svg";
 
 function List({ category, page, setPage }) {
   // global state
@@ -76,7 +76,7 @@ function List({ category, page, setPage }) {
               {/* Overlay */}
               <div className="overlay">
                 <img
-                  src={isFav ? pinFill : pinUnfill}
+                  src={isFav ? { pinFill } : { pinUnfill }}
                   alt={isFav ? "Favorited" : "Not Favorited"}
                   className="fav-pin"
                   onClick={(e) => handleFavoriteToggle(movie, e)}
