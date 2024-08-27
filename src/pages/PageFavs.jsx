@@ -8,6 +8,7 @@ import {
 } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
+import favBg from "/src/assets/images/bg/fav-bg.jpg";
 import noResult from "/src/assets/images/bg/noResult.jpg";
 import pinFill from "/src/assets/images/icons/pin-fill.svg";
 import pinUnfill from "/src/assets/images/icons/pin-unfill.svg";
@@ -70,11 +71,7 @@ function PageFavs() {
     <main className="main-favs">
       {countFavList > 0 ? (
         <>
-          <img
-            className="background-fav"
-            src={noResult}
-            alt="Bakcground Image"
-          />
+          <img className="background-fav" src={favBg} alt="Bakcground Image" />
           <h1>Favourites: </h1>
           <ul className="section-fav-list">
             {dataList.map((movie) => {
