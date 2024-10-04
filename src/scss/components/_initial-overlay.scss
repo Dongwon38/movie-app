@@ -1,0 +1,50 @@
+@use "../base/vars" as *;
+@use "../base/mixins" as *;
+
+.initial-overlay {
+  position: absolute;
+  right: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.initial-overlay-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+  height: 540px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid whitesmoke;
+  border-radius: 12px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .mini-logo {
+    width: 24px;
+  }
+  .guide-gif {
+    margin: 1.5rem 0;
+    width: 100%;
+    max-width: 480px;
+    display: block;
+  }
+
+  button {
+    color: #aaa;
+    font-size: 16px;
+    text-decoration: underline;
+    &:hover {
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

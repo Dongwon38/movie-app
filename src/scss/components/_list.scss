@@ -31,6 +31,16 @@
   display: block;
 }
 
+.fallback-title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+  font-size: 2rem;
+  margin: 0 0 2rem 0;
+}
+
 // ======== Overlay style ======== //
 .overlay {
   position: absolute;
@@ -73,7 +83,7 @@
 
 .overlay-overview {
   font-size: 12px;
-  font-weight: 100;
+  font-weight: 400;
   margin: 0;
 }
 

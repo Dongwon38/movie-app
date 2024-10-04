@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: $max-content-width;
 }
 
 .main-home h1 {
@@ -29,7 +30,7 @@ body {
 .sub-nav-container {
   position: fixed;
   z-index: 99;
-  bottom: 2.3rem;
+  bottom: 3rem;
   height: 2.3rem;
   width: 100%;
   max-width: $max-width;
@@ -54,9 +55,14 @@ body {
   @include normalize-object;
   color: white;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0 4px;
   cursor: pointer;
+}
+
+.category-nav button:hover {
+  background-color: #ff0000;
+  transition: 0.3s ease;
 }
 
 .btn-category.active {

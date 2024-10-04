@@ -27,10 +27,10 @@ function PageAbout() {
         <h2>Enjoy your movie journey with MOVIEPIN!</h2>
       </div>
 
-      <section class="authors">
-        <h4>&copy; Dongwon Kang, Ezequiel Marte, Laura Kochen and JM Hore </h4>
-        <h4>Site made for educational purposes only.</h4>
-        <h4>
+      <section className="authors">
+        <p>&copy; Dongwon Kang, Ezequiel Marte, Laura Kochen and JM Hore </p>
+        <p>Site made for educational purposes only.</p>
+        <p>
           This product uses the TMDB API but is not endorsed or certified by
           TMDB{" "}
           <img
@@ -38,7 +38,7 @@ function PageAbout() {
             src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_1-5bdc75aaebeb75dc7ae79426ddd9be3b2be1e342510f8202baf6bffa71d7f5c4.svg"
             alt="tmdb logo"
           />
-        </h4>
+        </p>
       </section>
     </main>
   );

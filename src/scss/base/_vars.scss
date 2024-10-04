@@ -1,5 +1,3 @@
-// $test-color: lightgray;
-
 // theme-color
 $primary-color: #ff0000;
 $secondary-color: white;
@@ -35,11 +33,13 @@ $background-favourites: rgb(61, 61, 61);
 
 // Breakpoints
 $mobile: 20em; // 320px
-$mobile-large: 31.25rem; // 500px
+$mobile-large: 22.5em; // 360px
+$mobile-wide: 31.25em; // 360px
 $tablet: 43.75em; // 700px
 $desktop: 62.5em; // 1000px
 $desktop-wide: 80em; // 1280px
 $max-width: 125em; // 2000px
+$max-content-width: 80rem; // 1280px
 
 // comment for dividing
 // ======== main layout ======== //

@@ -13,6 +13,7 @@ import { GlobalContext } from "../context/GlobalState";
 import { addFav, deleteFav } from "../features/favs/favsSlice";
 import pinFill from "/src/assets/images/icons/pin-fill.svg";
 import pinUnfill from "/src/assets/images/icons/pin-unfill.svg";
+import fallbackPoster from "../assets/images/bg/fallback-poster.png";
 
 function List({ category, page, setPage }) {
   // global state
@@ -58,7 +59,7 @@ function List({ category, page, setPage }) {
   };
 
   return (
-    <section>
+    <section className="section-wrapper">
       <div className="section-list">
         {movieList.map((movie) => {
           // check if it is Fav
@@ -68,10 +69,17 @@ function List({ category, page, setPage }) {
             <article key={movie.id} className="movie-item">
               <Link to={`/detail/${movie.id}`}>
                 <img
-                  src={`${poster_base_url}/${poster_size[5]}/${movie.poster_path}`}
+                  src={
+                    movie.poster_path == null
+                      ? `${fallbackPoster}`
+                      : `${poster_base_url}/${poster_size[5]}/${movie.poster_path}`
+                  }
                   alt={movie.title}
                   className="movie-poster"
                 />
+                {movie.poster_path === null && (
+                  <h3 className="fallback-title">{movie.title}</h3>
+                )}
               </Link>
               {/* Overlay */}
               <div className="overlay">

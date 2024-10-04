@@ -6,13 +6,15 @@
   justify-content: center;
   margin: 1rem 0;
   gap: 1rem;
+  button {
+    cursor: pointer;
+  }
 }
 
 .page-nav p,
 .page-nav button {
   color: white;
   padding: 0.5rem;
-
   gap: 0.2rem;
 }
 

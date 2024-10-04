@@ -3,7 +3,7 @@
 
 .section-hero {
   width: 100vw;
-  max-width: $max-width;
+  max-width: $max-content-width;
   position: relative;
   background-color: green;
   box-shadow: 2px 3px 15px ($box-shadow-color-black);
@@ -17,7 +17,7 @@
   display: none;
 }
 
-@media (min-width: $mobile-large) {
+@media (min-width: $mobile-wide) {
   .hero-bg-mobile {
     display: none;
   }
@@ -41,7 +41,7 @@
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 1rem 1fr 1rem;
+  grid-template-columns: 3rem 1fr 3rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 80%);
 }
 
@@ -53,8 +53,9 @@
 .btn-container button {
   color: white;
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 400;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .hero-info {
@@ -73,8 +74,8 @@
       text-transform: uppercase;
     }
     p {
-      font-size: 12px;
-      font-weight: 100;
+      font-size: 16px;
+      font-weight: 400;
     }
     h3,
     p {
@@ -84,13 +85,13 @@
     .genre-list {
       display: flex;
       gap: 5px;
-      font-weight: 100;
+      font-weight: 400;
     }
     .genre-list,
     li {
       margin: 0;
       padding: 0;
-      font-size: 12px;
+      font-size: 16px;
     }
   }
 }
@@ -107,7 +108,7 @@
   display: none;
 }
 
-@media (min-width: $mobile-large) {
+@media (min-width: $mobile-wide) {
   .hero-overview {
     width: 100%;
     overflow: hidden;

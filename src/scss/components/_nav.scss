@@ -10,7 +10,7 @@
   bottom: 0;
   padding: 0 1rem;
   max-width: $max-width;
-  height: 2.3rem;
+  height: 3rem;
   display: flex;
   background-color: black;
 }
@@ -24,11 +24,10 @@
     top: 0;
     margin: 0 auto;
     padding: 0 1rem;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.8);
     transition: background-color 0.2s ease;
   }
   .main-nav-scrolled {
-    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
   }
 
@@ -50,12 +49,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 @media (min-width: $desktop) {
   .main-nav .btn-container {
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding-left: 2rem;
   }
 }
 
@@ -78,13 +78,17 @@
 
 .search-bar input {
   @include normalize-object;
-  width: 52px;
+  width: 100%;
   margin-right: 1rem;
   outline: none;
   color: white;
-  font-size: 12px;
+  font-size: 20px;
 }
 @media (min-width: $tablet) {
+  .search-bar {
+    margin-left: 1rem;
+    border-left: 3px solid white;
+  }
   .search-bar input {
     margin-left: 0.5rem;
   }
@@ -111,10 +115,10 @@
     list-style: none;
     text-transform: uppercase;
     gap: 1rem;
-    font-size: 12px;
+    font-size: 20px;
   }
 }
 
-.btn-menu i {
-  font-size: 14px;
+.btn-menu .fa-icon {
+  font-size: 24px;
 }

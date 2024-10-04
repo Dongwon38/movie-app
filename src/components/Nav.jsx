@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "/src/assets/images/logo/logo3.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function Nav() {
   const [scrolling, setScrolling] = useState(false);
@@ -64,9 +66,9 @@ function Nav() {
         </nav>
         <button className="btn-menu" onClick={handleMenuClick}>
           {menuState === true ? (
-            <i class="fa-solid fa-xmark"></i>
+            <FontAwesomeIcon className="fa-icon" icon={faXmark} />
           ) : (
-            <i class="fa-solid fa-bars"></i>
+            <FontAwesomeIcon className="fa-icon" icon={faBars} />
           )}
         </button>
       </div>

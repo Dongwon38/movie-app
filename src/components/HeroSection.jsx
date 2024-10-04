@@ -6,6 +6,8 @@ import {
   auth,
 } from "../globals/globalVariables";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGreaterThan, faLessThan } from "@fortawesome/free-solid-svg-icons";
 
 function HeroSection() {
   // to store data for hero section from the results
@@ -59,16 +61,16 @@ function HeroSection() {
 
   // Slide page button
   function handleSlide(e) {
-    const PrevOrNext = e.target.value;
+    const PrevOrNext = e.currentTarget.dataset.direction;
 
-    if (PrevOrNext == "prev" && slideNumber > 0) {
+    if (PrevOrNext === "prev" && slideNumber > 0) {
       setSlideNumber(slideNumber - 1);
-    } else if (PrevOrNext == "prev" && slideNumber == 0) {
+    } else if (PrevOrNext === "prev" && slideNumber === 0) {
       setSlideNumber(maxSlideIndex);
     }
-    if (PrevOrNext == "next" && slideNumber < maxSlideIndex) {
+    if (PrevOrNext === "next" && slideNumber < maxSlideIndex) {
       setSlideNumber(slideNumber + 1);
-    } else if (PrevOrNext == "next" && slideNumber == maxSlideIndex) {
+    } else if (PrevOrNext === "next" && slideNumber === maxSlideIndex) {
       setSlideNumber(0);
     }
   }
@@ -89,9 +91,9 @@ function HeroSection() {
   return (
     <section className="section-hero">
       <div className="info-container">
-        <div className="btn-container">
-          <button onClick={handleSlide} value="prev">
-            &lt;
+        <div className="btn-container prev-slide">
+          <button onClick={handleSlide} data-direction="prev">
+            <FontAwesomeIcon icon={faLessThan} />
           </button>
         </div>
         {heroSlide && (
@@ -112,9 +114,9 @@ function HeroSection() {
             </Link>
           </div>
         )}
-        <div className="btn-container">
-          <button onClick={handleSlide} value="next">
-            &gt;
+        <div className="btn-container next-slide">
+          <button onClick={handleSlide} data-direction="next">
+            <FontAwesomeIcon icon={faGreaterThan} />
           </button>
         </div>
       </div>
